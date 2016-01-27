@@ -15,6 +15,18 @@ class ViewController: UIViewController {
     
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
+    
+    @IBAction func showNextQuestion(sender: AnyObject)  {
+        
+        
+        
+    }   // end showNextQuestion(sender: AnyObject)
+    
+    @IBAction func showAnswer(sender: AnyObject)    {
+        
+        
+        
+    }   // end showAnswer(sender: AnyObject)
 
 }   // end viewController
 
