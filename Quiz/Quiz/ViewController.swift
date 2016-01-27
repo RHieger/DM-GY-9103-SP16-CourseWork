@@ -30,13 +30,37 @@ class ViewController: UIViewController {
     
     @IBAction func showNextQuestion(sender: AnyObject)  {
         
+        ++currentQuestionIndex      // Using prefix notation, increment
+                                    // current question index.
         
+        // If currentQuestionIndex is the same as the count of
+        // elements in questions array, set the current index to
+        // 0 to start from beginning:
+        
+        if currentQuestionIndex == questions.count   {
+            
+            currentQuestionIndex = 0;
+            
+        }   // end if
+        
+        // Specify content for question, questionLabel and
+        // answerLabel views.
+        
+        let question: String = questions[currentQuestionIndex]
+        
+        questionLabel.text = question
+        
+        answerLabel.text = "???"
         
     }   // end showNextQuestion(sender: AnyObject)
     
     @IBAction func showAnswer(sender: AnyObject)    {
         
+        // Specify content for answer and answerLabel:
         
+        let answer: String = answers[currentQuestionIndex]
+        
+        answerLabel.text = answer
         
     }   // end showAnswer(sender: AnyObject)
 
