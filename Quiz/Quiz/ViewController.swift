@@ -9,6 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        
+        // Call superclass of viewDidLoad()
+        
+        super.viewDidLoad()
+        
+        // Set questionLabel to first question in array:
+        
+        questionLabel.text = questions[currentQuestionIndex]
+        
+    }   // end viewDidLoad()
 
     // Declare necessary outlets for top and bottom
     // labels in Main.storyboard.
