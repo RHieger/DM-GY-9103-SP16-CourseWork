@@ -73,7 +73,9 @@ let fmStation = 91.1    // NOTE: Book incorrectly lists sidebar output as
 
 // Assigning literals to an Array (in this case, array constant):
 
-let countingUp = ["one","two"]
+//let countingUp = ["one","two"]
+
+var countingUp = ["one", "two"]
 
 // Assigning literals to a Dictionary (in this case, also constant):
 
@@ -203,3 +205,22 @@ countingUp.count
 // Verify whether emptString String Type is empty:
 
 emptyString.isEmpty
+
+/* Exploring Instance Methods:
+ *
+ * “An instance method is a function that is specific to a particular
+ *  type and can be called on an instance of that type. Try out the
+ *  append(_:) instance method from Array<T>.”
+ *
+ * Excerpt From: Christian Keur. “iOS Programming: The Big Nerd Ranch Guide,
+ * p. 103 (Robert Hieger's Library). iBooks.
+*/
+
+// Demonstrate the append(_:) method of an Array instance.
+// NOTE: In order to do this, we are converting the countingUp Array
+// from a constant to a variable. See commented-out code on line 76
+// and its replacement on line 78.
+
+countingUp.append("three")          // Adds an element of value "three"
+                                    // to the countingUp Array.
+
