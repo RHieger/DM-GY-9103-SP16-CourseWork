@@ -88,3 +88,98 @@ let nameByParkingSpace = [13: "Alice", 27: "Bob"]       // NOTE: Strange that
 
 let secondElement = countingUp[1]           // Assigns the second Array element
                                             // to constant secondElement.
+
+/* Working with Initializers:
+ *
+ * "Some standard types have initializers that return empty literals when no
+ *  arguments are supplied. Add an empty string and an empty array to your
+ *  playground.”
+ *
+ *  Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ *  p. 101 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+let emptyString = String()      // NOTE: Once again, this is a String constant,
+                                // not a variable.
+
+let emptyArrayOfInts = [Int]()  // NOTE: Just as above, this is an Array
+                                // constant, being initialized as an
+                                // empty Array.
+
+let emptySetOfFloats = Set<Float>()     // NOTE: Also as above, this is a Set
+                                        // constant (immutable), being
+                                        // initialized as an empty Set.
+
+/* Exploring Types With Multiple Initializers:
+ *
+ * “Types can have multiple initializers. For example, String has an
+ *  initializer that accepts an Int and creates a string based on
+ *  that value.”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * p. 101 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+// Use Integer Constant of number from line 63:
+
+let meaningOfLife = String(number)
+
+// Initialize a Set using an Array literal:
+
+let availableRooms = Set([205, 411, 412])
+
+/* Examples of Float Initializers:
+ *
+ * “Float has several initializers. The parameter-less initializer returns an
+ *  instance of Float with the default value. There is also an initializer that 
+ *  accepts a floating-point literal.”
+ *
+ *  Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ *  p. 102 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+// Float with Default Value:
+
+let defaultFloat = Float()      // Results in output of '0', interestingly,
+                                // rather than 0.0
+
+// Float Initialized with Float Literal:
+
+let floatFromLiteral = Float(3.14)
+
+/* Use Type Inferrence to Create Float Literal:
+ *
+ * “If you use type inference for a floating-point literal, the type
+ *  defaults to Double.”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * p. 102 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+let easyPi = 3.14
+
+/* Now use this Double to Initialize an Explicitly Typed Float:
+ *
+ * “Use the Float initializer that accepts a Double to create a Float”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * p. 102 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+let floatFromDouble = Float(easyPi)
+
+/* Now Initialize the Float with Explicit Typing:
+ *
+ * “You can achieve the same result by specifying the type in the declaration.”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * p. 102 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+let floatingPi: Float = 3.14
