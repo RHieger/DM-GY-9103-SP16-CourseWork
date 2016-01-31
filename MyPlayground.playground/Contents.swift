@@ -224,3 +224,38 @@ emptyString.isEmpty
 countingUp.append("three")          // Adds an element of value "three"
                                     // to the countingUp Array.
 
+/* Exploring Optionals:
+*
+* “Swift types can be optional, which is indicated by appending ? to a
+*  type name.
+*
+*   v​a​r​ ​a​n​O​p​t​i​o​n​a​l​F​l​o​a​t​:​ ​F​l​o​a​t​?
+*   v​a​r​ ​a​n​O​p​t​i​o​n​a​l​A​r​r​a​y​O​f​S​t​r​i​n​g​s​:​ ​[​S​t​r​i​n​g​]​?
+*   v​a​r​ ​a​n​O​p​t​i​o​n​a​l​A​r​r​a​y​O​f​O​p​t​i​o​n​a​l​S​t​r​i​n​g​s​:​ ​[​S​t​r​i​n​g​?​]​?
+*
+*  An optional lets you express the possibility that a variable may not
+*  store a value at all. The value of an optional will either be an
+*  instance of the specified type or nil.”
+*
+*  Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+*  p. 105 (Robert Hieger's Library). iBooks.
+*/
+
+// Example instrument readings, implemented as optionals, from p. 106:
+
+var reading1: Float?
+
+var reading2: Float?
+
+var reading3: Float?
+
+// NOTE: All values of the reading* variables defaulted to nil because
+// the variables were only declared, not initialized with any value.
+
+// Now we will assign values to the Float optionals:
+
+reading1 = 9.8
+
+reading2 = 9.2
+
+reading3 = 9.7
