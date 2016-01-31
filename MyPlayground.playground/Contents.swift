@@ -11,3 +11,14 @@ str = "Hello, Swift"
 
 let constString = str
 
+/* In the next few lines, we declare (but do not initialize) specified
+ * data types rathar than letting the Swift compiler infer data type.
+ * NOTE: Because the variables are declared, but not initialized, no
+ * value appears in the Playground sidebar.
+*/
+
+var nextYear: Int
+
+var bodyTemp: Float
+
+var hasPet: Bool
