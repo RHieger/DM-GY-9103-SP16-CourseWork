@@ -183,3 +183,23 @@ let floatFromDouble = Float(easyPi)
 */
 
 let floatingPi: Float = 3.14
+
+/* Working with Properties:
+ *
+ * “A property is a value associated with an instance of a type. For example,
+ *  String has the property isEmpty, which is a Bool that tells you whether
+ *  the string is empty. Array<T> has the property count, which is the number
+ *  of elements in the array as an Int.”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * p. 102-103 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+// Get number of elements in countingUp Array:
+
+countingUp.count
+
+// Verify whether emptString String Type is empty:
+
+emptyString.isEmpty
