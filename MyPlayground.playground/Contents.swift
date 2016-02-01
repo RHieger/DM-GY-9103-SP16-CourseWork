@@ -362,3 +362,15 @@ if let space13Assignee = nameByParkingSpace[13] {
     print("Key 13 is assigned in the dictionary!")
     
 }   // end if-let
+
+// Use for-in loop and string interpolation to loop
+// through the nameByParkingSpace dictionary.
+
+for (space, name) in nameByParkingSpace {
+    
+    let permit = "Space \(space): \(name)"
+    
+    print(permit)       // NOTE: I augment the book's code by
+                        // printing the tuples to the console.
+    
+}   // end for-in
