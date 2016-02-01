@@ -374,3 +374,48 @@ for (space, name) in nameByParkingSpace {
                         // printing the tuples to the console.
     
 }   // end for-in
+
+/* Exploring Enumerations and the Switch Statement:
+ *
+ * “An enumeration is a type with a discrete set of values.”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * page 113 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+// Define enumeration pieType:
+
+enum pieType    {
+    
+    case Cherry
+    case Apple
+    case Pecan
+    
+}
+
+// Define test value for Switch:
+
+let favoritePie = pieType.Apple
+
+// Define constant for use in Switch.
+
+let name: String
+
+switch favoritePie {
+    
+case .Apple:
+    name = "Apple"
+    
+case .Cherry:
+    name = "Cherry"
+    
+case .Pecan:
+    name = "Pecan"
+    
+}   // end switch favoritePie
+
+// NOTE: switch statement must be exhaustive. That is, it must account
+// for every possible value, either explicitly or by using a default:
+// case statement.
+
