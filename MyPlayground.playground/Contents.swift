@@ -332,3 +332,33 @@ if let r1 = reading1,
 // methods demonstrated, so uncommented the lines that would have caused
 // the program to crash if they were commented out.
 
+/* Exploring Subscripting Dictionaries:
+ *
+ * “Recall that subscripting an array beyond its bounds causes a trap.
+ *  Dictionaries are different. The result of subscripting a dictionary
+ *  is an optional...If the key is not in the dictionary, the result will
+ *  be nil. As with other optionals, it is common to use if-let when
+ *  subscripting a dictionary...”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * page 109 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+// First try the dangerous way:
+
+let space13Assignee = nameByParkingSpace[13]    // NOTE: Even though the
+                                                // subscript is out-of-range
+                                                // of the dictionary and should
+                                                // evaluate to nil, the
+                                                // playground simply displays
+                                                // the last indexed value in
+                                                // the dictionary.
+
+// Now let's do it the correct way with if-let:
+
+if let space13Assignee = nameByParkingSpace[13] {
+    
+    print("Key 13 is assigned in the dictionary!")
+    
+}   // end if-let
