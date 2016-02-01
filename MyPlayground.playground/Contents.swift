@@ -259,3 +259,76 @@ reading1 = 9.8
 reading2 = 9.2
 
 reading3 = 9.7
+
+/* Exploring "Unrwapping the Optional":
+ *
+ * “...you cannot use these optional floats like non-optional floats –
+ *  even if they have been assigned Float values. Before you can read
+ *  the value of an optional variable, you must address the possibility
+ *  of its value being nil. This is called unwrapping the optional.”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * page 106(Robert Hieger's Library). iBooks.
+ *
+*/
+
+// Demonstrate "Unwrapping the Optional", Method 1--Forced Unwrapping:
+
+// First we will try to average the optionals to demonstrate that you
+// cannot directly access the value of an optional. This will throw an
+// error. Then we will comment out the offending line of code.
+
+//let avgReading = (reading1 + reading2 + reading3) / 3
+
+// Now, we will used Forced Unwrapping:
+
+let avgReading = (reading1! + reading2! + reading3!) / 3    // Now this works!
+
+// HOWEVER...
+
+/*
+ * “Everything looks fine, and you see the correct average in the sidebar.
+ *  But a danger lurks in your code. When you forcibly unwrap an optional,
+ *  you tell the compiler that you are sure that the optional will not be
+ *  nil and can be treated as if it were a normal Float. But what if you
+ *  are wrong?”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * page 107 (Robert Hieger's Library). iBooks.
+*/
+
+// In point of fact, if we commented out the value assignment on any one of
+// the optional floats, the Swift compiler would throw an error reading
+// "fatal error: unexpectedly found nil while unwrapping an Optional value."
+
+// Demonstrate Unwrapping the Optional, Method 2--Optional Binding:
+
+/* This method is considered safer:
+ *
+ * “Optional binding works within a conditional if-let statement: You assign
+ *  the optional to a temporary constant of the corresponding non-optional
+ *  type. If your optional has a value, then the assignment is valid and you
+ *  proceed using the non-optional constant. If the optional is nil, then you
+ *  can handle that case with an else clause.”
+ *
+ * Excerpt From: Christian Keur. iOS Programming: The Big Nerd Ranch Guide,
+ * page 108 (Robert Hieger's Library). iBooks.
+ *
+*/
+
+if let r1 = reading1,
+       r2 = reading2,
+       r3 = reading3    {
+       
+    let avgReading = (r1 + r2 + r3) / 3
+        
+}   else {
+    
+    let errorString = "Instrument reported a reading that was nil."
+    
+}   // end if let-else
+
+// NOTE: I tried all cases as noted in the book, but prefer to have both
+// methods demonstrated, so uncommented the lines that would have caused
+// the program to crash if they were commented out.
+
