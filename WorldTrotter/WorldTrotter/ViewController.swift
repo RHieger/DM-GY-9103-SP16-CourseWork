@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         let firstFrame =
         CGRect(x: 160, y: 240, width: 100, height: 150)
         
-        // Bind firstFrame to UIView.
+        // Create superview to contain CGRect.
         
         let firstView = UIView(frame: firstFrame)
         
@@ -33,6 +33,23 @@ class ViewController: UIViewController {
         // Add subview to UIView.
         
         view.addSubview(firstView)
+        
+        // Build another frame view from a CGRect.
+        
+        let secondFrame =
+        CGRect(x: 20, y: 30, width: 50, height: 50)
+        
+        // Create superview to contatin CGRect
+        
+        let secondView = UIView(frame: secondFrame)
+        
+        // Set color for secondFrame CGRect.
+        
+        secondView.backgroundColor = UIColor.greenColor()
+        
+        // Add secondView to UIView.
+        
+        view.addSubview(secondView)
         
     }   // end viewDidLoad()
 
