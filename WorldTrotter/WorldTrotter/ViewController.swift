@@ -47,9 +47,9 @@ class ViewController: UIViewController {
         
         secondView.backgroundColor = UIColor.greenColor()
         
-        // Add secondView to UIView.
+        // Add secondView to firstView subview.
         
-        view.addSubview(secondView)
+        firstView.addSubview(secondView)
         
     }   // end viewDidLoad()
 
