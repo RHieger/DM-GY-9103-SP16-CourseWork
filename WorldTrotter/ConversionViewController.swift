@@ -18,9 +18,19 @@ class ConvsionViewController: UIViewController {
     
     @IBAction func fahrenheitFieldEditingChanged(textField: UITextField) {
         
-        // Change the text appearing in the UILabel:
+        // Change the text appearing in the UILabel while
+        // allowing for the text being empty prior to user
+        // input in the Fahrenheit text field.
         
-        celsiusLabel.text = textField.text
+        if let text = textField.text where !text.isEmpty    {
+            
+            celsiusLabel.text = textField.text
+            
+        }   else    {
+            
+            celsiusLabel.text = "???"
+            
+        }   // end if-else
         
     }   // end fahrenheitFieldEditingChanged(textField: UITextField)
     
