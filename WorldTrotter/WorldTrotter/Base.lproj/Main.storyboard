@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Convsion View Controller-->
+        <!--Conversion View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ConvsionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -69,7 +69,7 @@
                             <constraint firstItem="4vN-8s-uCC" firstAttribute="centerX" secondItem="F44-qe-8fu" secondAttribute="centerX" id="nzh-IO-f0z"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="klR-yI-Ifq" appends="YES" id="2Vi-in-AYC"/>
+                            <outletCollection property="gestureRecognizers" destination="45c-lN-cpz" appends="YES" id="hwK-AK-P5f"/>
                         </connections>
                     </view>
                     <connections>
@@ -78,9 +78,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="klR-yI-Ifq">
+                <tapGestureRecognizer id="45c-lN-cpz">
                     <connections>
-                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="bf4-il-lud"/>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="MYW-pZ-m2q"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

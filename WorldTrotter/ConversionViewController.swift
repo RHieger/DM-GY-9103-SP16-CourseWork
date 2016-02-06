@@ -8,11 +8,39 @@
 
 import UIKit
 
-class ConvsionViewController: UIViewController {
+class ConversionViewController: UIViewController {
     
     // IBOutlet for Celsius temperature UILabel:
     
     @IBOutlet var celsiusLabel: UILabel!
+    
+    // Optional for value of Fahrenheit temperature:
+    
+    var fahrenheitValue: Double?    {
+        
+        didSet  {
+            
+            updateCelsiusLabel()
+            
+        }   // end didSet
+        
+    }   // end fahrenheitValue: Double?
+    
+    // Computed property for calculation of Celsius temperature:
+    
+    var celsiusValue: Double? {
+    
+        if let value = fahrenheitValue {
+            
+            return (value - 32) * 5 / 9
+            
+        }   else    {
+            
+            return nil
+            
+        }   // end if-else
+    
+    }   // end if let value = fahrenheitValue
     
     // IBOutlet for Fahrenheit Text Field:
     
@@ -22,17 +50,13 @@ class ConvsionViewController: UIViewController {
     
     @IBAction func fahrenheitFieldEditingChanged(textField: UITextField) {
         
-        // Change the text appearing in the UILabel while
-        // allowing for the text being empty prior to user
-        // input in the Fahrenheit text field.
-        
-        if let text = textField.text where !text.isEmpty    {
+        if let text = textField.text, value = Double(text)  {
             
-            celsiusLabel.text = textField.text
+            fahrenheitValue = value
             
         }   else    {
             
-            celsiusLabel.text = "???"
+            fahrenheitValue = nil
             
         }   // end if-else
         
@@ -47,5 +71,22 @@ class ConvsionViewController: UIViewController {
         textField.resignFirstResponder()
         
     }   // end dismissKeyboard(sender: AnyObject)
+    
+    // Method to update the celsiusLabel to reflect a converted
+    // Fahrenheit temperature:
+    
+    func updateCelsiusLabel()   {
+        
+        if let value = celsiusValue {
+            
+            celsiusLabel.text = "\(value)"
+            
+        }   else    {
+            
+            celsiusLabel.text = "???"
+            
+        }   // end if-lse
+        
+    }   // end updateCelsiusLabel()
     
 }   // end ConversionViewController: UIViewController
