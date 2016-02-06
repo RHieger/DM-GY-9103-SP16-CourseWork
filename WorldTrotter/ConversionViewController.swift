@@ -14,6 +14,10 @@ class ConvsionViewController: UIViewController {
     
     @IBOutlet var celsiusLabel: UILabel!
     
+    // IBOutlet for Fahrenheit Text Field:
+    
+    @IBOutlet var textField: UITextField!
+    
     // IBAction to attach to Fahrenheit Text Field:
     
     @IBAction func fahrenheitFieldEditingChanged(textField: UITextField) {
@@ -33,5 +37,15 @@ class ConvsionViewController: UIViewController {
         }   // end if-else
         
     }   // end fahrenheitFieldEditingChanged(textField: UITextField)
+    
+    // dismissKeyBoard Action (class method):
+    
+    @IBAction func dismissKeyboard(sender: AnyObject)   {
+        
+        // Force textField to relinquish firstResponder status.
+        
+        textField.resignFirstResponder()
+        
+    }   // end dismissKeyboard(sender: AnyObject)
     
 }   // end ConversionViewController: UIViewController
