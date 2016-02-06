@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversionViewController: UIViewController {
+class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     // IBOutlet for Celsius temperature UILabel:
     
@@ -105,5 +105,18 @@ class ConversionViewController: UIViewController {
         return nf
         
     }()   // end NumberFormatter
+    
+    // Implement textField(_:shouldChangeCharactersInRange:replacementString:).
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange
+        range: NSRange, replacementString string: String) -> Bool {
+        
+        print( "Current text: \(textField.text)" )
+            
+        print( "Replacement text: \(string)" )
+            
+        return true
+            
+    }
     
 }   // end ConversionViewController: UIViewController
