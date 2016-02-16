@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C51F8B991C72D3610082F178 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51F8B981C72D3610082F178 /* MapKit.framework */; };
 		C53451501C6358C00048E36E /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534514F1C6358C00048E36E /* ConversionViewController.swift */; };
 		C57CD7A91C5EFF11002125BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57CD7A81C5EFF11002125BD /* AppDelegate.swift */; };
 		C57CD7AE1C5EFF11002125BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57CD7AC1C5EFF11002125BD /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C51F8B981C72D3610082F178 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C534514F1C6358C00048E36E /* ConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 		C57CD7A51C5EFF11002125BD /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57CD7A81C5EFF11002125BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C51F8B991C72D3610082F178 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 		C57CD79C1C5EFF11002125BD = {
 			isa = PBXGroup;
 			children = (
+				C51F8B981C72D3610082F178 /* MapKit.framework */,
 				C534514F1C6358C00048E36E /* ConversionViewController.swift */,
 				C57CD7A71C5EFF11002125BD /* WorldTrotter */,
 				C57CD7A61C5EFF11002125BD /* Products */,
