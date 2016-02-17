@@ -60,12 +60,6 @@ class MapViewController: UIViewController {
         // Set anchor constraints of segmentedControl so that they are
         // aligned with the superview, in this case mapView.
         
-//        let topConstraint =
-//        segmentedControl.topAnchor.constraintEqualToAnchor (view.topAnchor)
-        
-        // Correct code so that segmentedControl does not underlap
-        // the status bar.
-        
         let topConstraint =
         segmentedControl.topAnchor.constraintEqualToAnchor (topLayoutGuide.bottomAnchor, constant: 8)
         
@@ -83,12 +77,6 @@ class MapViewController: UIViewController {
         
         let trailingConstraint =
         segmentedControl.trailingAnchor.constraintEqualToAnchor (margins.trailingAnchor)
-        
-//        let leadingConstraint =
-//        segmentedControl.leadingAnchor.constraintEqualToAnchor (view.leadingAnchor)
-//        
-//        let trailingConstraint =
-//        segmentedControl.trailingAnchor.constraintEqualToAnchor (view.trailingAnchor)
         
         // Activate segmentedControl view constraints.
         
