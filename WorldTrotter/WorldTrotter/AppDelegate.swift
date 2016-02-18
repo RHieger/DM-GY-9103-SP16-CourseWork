@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  WorldTrotter
 //
-//  Created by Robert Hieger on 1/31/16.
+//  Created by Robert Hieger on 2/17/16.
 //  Copyright © 2016 Hieger Designs. All rights reserved.
 //
 

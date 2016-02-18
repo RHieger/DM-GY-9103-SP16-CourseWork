@@ -2,7 +2,7 @@
 //  ConversionViewController.swift
 //  WorldTrotter
 //
-//  Created by Robert Hieger on 2/4/16.
+//  Created by Robert Hieger on 2/17/16.
 //  Copyright © 2016 Hieger Designs. All rights reserved.
 //
 
@@ -10,47 +10,34 @@ import UIKit
 
 class ConversionViewController: UIViewController, UITextFieldDelegate {
     
-    // IBOutlet for Celsius temperature UILabel:
+    // IBOutlets AND IBActions:
+    
+    // Declare IBOutlet for Celsius Temperature Text Label.
     
     @IBOutlet var celsiusLabel: UILabel!
     
-    // Optional for value of Fahrenheit temperature:
-    
-    var fahrenheitValue: Double?    {
-        
-        didSet  {
-            
-            updateCelsiusLabel()
-            
-        }   // end didSet
-        
-    }   // end fahrenheitValue: Double?
-    
-    // Computed property for calculation of Celsius temperature:
-    
-    var celsiusValue: Double? {
-    
-        if let value = fahrenheitValue {
-            
-            return (value - 32) * 5 / 9
-            
-        }   else    {
-            
-            return nil
-            
-        }   // end if-else
-    
-    }   // end if let value = fahrenheitValue
-    
-    // IBOutlet for Fahrenheit Text Field:
+    // Declare IBOutlet for Farhenheit Temparature Text Field.
     
     @IBOutlet var textField: UITextField!
     
-    // IBAction to attach to Fahrenheit Text Field:
+    // Declare IBAction on textField to Dismiss the Keyboard.
+    
+    @IBAction func dismissKeyBoard(sender: AnyObject) {
+        
+        // Dismiss the keyboard by resigning First Responder status.
+        
+        textField.resignFirstResponder()
+        
+    }   // end dismissKeyBoard(sender: AnyObject)
+    
+    // Declare IBAction for celsiusLabel.
     
     @IBAction func fahrenheitFieldEditingChanged(textField: UITextField) {
         
-        if let text = textField.text, value = Double(text)  {
+        // Set the text of celsiusLabel according to the edit
+        // passed through as textField.
+        
+        if let text = textField.text, value = Double(text) {
             
             fahrenheitValue = value
             
@@ -62,73 +49,105 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         
     }   // end fahrenheitFieldEditingChanged(textField: UITextField)
     
-    // dismissKeyBoard Action (class method):
+    // PROPERTIES:
     
-    @IBAction func dismissKeyboard(sender: AnyObject)   {
-        
-        // Force textField to relinquish firstResponder status.
-        
-        textField.resignFirstResponder()
-        
-    }   // end dismissKeyboard(sender: AnyObject)
+    // User input of Fahrenheit temp
     
-    // Method to update the celsiusLabel to reflect a converted
-    // Fahrenheit temperature:
+    var fahrenheitValue: Double?    {
+        
+        // Declare property observer to call
+        // updateCelsiusLabel().
+        
+        didSet {
+            
+            // call updateCelsiusLabel()
+            
+            updateCelsiusLabel()
+            
+        }   // end didSet
+        
+    }   // end fahrenheitValue: Double?
+    
+    // Computed Property for Celsius temparature equivalent:
+    
+    var celsiusValue: Double?   {
+        
+        // Compute value for Celsius Temperature.
+        
+        if let value = fahrenheitValue {
+            
+            // Return converted Fahrenheit value.
+            
+            return (value - 32) * (5 / 9)
+            
+        }   else    {
+            
+            // Return nil value.
+            
+            return nil
+            
+        }   // end if-else
+        
+    }   // end calculated celsiusValue: Double?
+    
+    // METHODS:
+    
+    // Override func viewDidLoad() to print message to console.
+    
+    override func viewDidLoad() {
+        
+        // Call super implementation of viewDidLoad() method.
+        
+        super.viewDidLoad()
+        
+        // Print message to console when ConversionView loads.
+        
+        print("ConversionViewController loaded its view.")
+        
+    }   // end override func viewDidLoad()
+    
+    // Declare Method to update the Celsius Temperature Label.
+    
+    // First create NumberFormatter to specify only 1 decimal
+    // place for converted Celsius value
+    
+    let numberFormatter: NSNumberFormatter =
+    {
+        let nf = NSNumberFormatter()
+        nf.numberStyle = .DecimalStyle
+        nf.minimumFractionDigits = 0
+        nf.maximumFractionDigits = 1
+        return nf
+    }()
     
     func updateCelsiusLabel()   {
         
         if let value = celsiusValue {
             
-            celsiusLabel.text =
-                NumberFormatter.stringFromNumber(value)
+            // Update celsiusLabel with converted value.
+            
+            celsiusLabel.text = numberFormatter.stringFromNumber(value)
             
         }   else    {
             
+            // Update celsiusLabel with "???" string if nil.
+            
             celsiusLabel.text = "???"
             
-        }   // end if-lse
+        }   // end if-else
         
-    }   // end updateCelsiusLabel()
+    }   // end updatedCelsiusLabel()
     
-    // Define a Number Formatter.
-    
-    let NumberFormatter: NSNumberFormatter =    {
-        
-        let nf = NSNumberFormatter()
-        
-        nf.numberStyle = .DecimalStyle
-        
-        nf.minimumFractionDigits = 0
-        
-        nf.maximumFractionDigits = 1
-        
-        return nf
-        
-    }()   // end NumberFormatter
-    
-    // Implement textField(_:shouldChangeCharactersInRange:replacementString:).
-    
-    func textField(textField: UITextField, shouldChangeCharactersInRange
-        range: NSRange, replacementString string: String) -> Bool {
-        
-        print( "Current text: \(textField.text)" )
+    func textField(textField: UITextField,
+        shouldChangeCharactersInRange range: NSRange,
+        replacementString string: String) -> Bool       {
             
-        print( "Replacement text: \(string)" )
+            print("Current Text: \(textField.text)")
             
-        return true
+            print("Replacement Text: \(string)")
             
-    }
+            return true
+        
+    }   // end func textField
     
-    // Override func viewDidLoad()
-    
-    override func viewDidLoad() {
-        
-        // Always call the super implementation of viewDidLoad()
-        
-        super.viewDidLoad()
-        
-        print("ConversionViewController loaded its view.")
-        
-    }
-    
-}   // end ConversionViewController: UIViewController
+}   // end ConversionViewController

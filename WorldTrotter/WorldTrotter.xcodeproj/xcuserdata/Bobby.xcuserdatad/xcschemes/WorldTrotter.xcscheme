@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C57CD7A41C5EFF11002125BD"
+               BlueprintIdentifier = "C51F8BA41C74DCFB0082F178"
                BuildableName = "WorldTrotter.app"
                BlueprintName = "WorldTrotter"
                ReferencedContainer = "container:WorldTrotter.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C57CD7A41C5EFF11002125BD"
+            BlueprintIdentifier = "C51F8BA41C74DCFB0082F178"
             BuildableName = "WorldTrotter.app"
             BlueprintName = "WorldTrotter"
             ReferencedContainer = "container:WorldTrotter.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C57CD7A41C5EFF11002125BD"
+            BlueprintIdentifier = "C51F8BA41C74DCFB0082F178"
             BuildableName = "WorldTrotter.app"
             BlueprintName = "WorldTrotter"
             ReferencedContainer = "container:WorldTrotter.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C57CD7A41C5EFF11002125BD"
+            BlueprintIdentifier = "C51F8BA41C74DCFB0082F178"
             BuildableName = "WorldTrotter.app"
             BlueprintName = "WorldTrotter"
             ReferencedContainer = "container:WorldTrotter.xcodeproj">
