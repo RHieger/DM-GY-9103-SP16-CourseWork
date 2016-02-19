@@ -142,11 +142,31 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         shouldChangeCharactersInRange range: NSRange,
         replacementString string: String) -> Bool       {
             
-            print("Current Text: \(textField.text)")
+            // Declare constants to represent current and
+            // replacement text.
             
-            print("Replacement Text: \(string)")
+            let existingTextHasDecimalSeparator =
+            textField.text?.rangeOfString(".")
             
-            return true
+            let replacementTextHasDecimalSeparator =
+            string.rangeOfString(".")
+            
+            // Test that "." is not present both in contents of
+            // textField.text and textField.string (the replace-
+            // ment string of text. If it is, this would indicate
+            // a second decimal point, and the user input should
+            // be disallowed.
+            
+            if existingTextHasDecimalSeparator != nil &&
+                replacementTextHasDecimalSeparator != nil       {
+                    
+                return false
+                    
+            }   else    {
+                
+                    return true
+                
+            }   // end if-else
         
     }   // end func textField
     
