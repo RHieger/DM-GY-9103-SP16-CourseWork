@@ -138,6 +138,20 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         
     }   // end updatedCelsiusLabel()
     
+    // FULL DISCOLOSURE:
+    //
+    // For the code within func textField that addresses the
+    // Chapter 4 Bronze Challenge on page 198 of the iBook
+    // edition, I am indebted to the Big Nerd Ranch forum for
+    // the iOS Programming Big Nerd Ranch Guide, 5th ed.
+    //
+    // I have based my code entirely on this posting, with only
+    // minor alterations in variable and or constant identifiers.
+    //
+    // The URL for this article is:
+    //
+    // http://forums.bignerdranch.com/viewtopic.php?f=623&t=10785
+    
     func textField(textField: UITextField,
         shouldChangeCharactersInRange range: NSRange,
         replacementString string: String) -> Bool       {
@@ -151,22 +165,32 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
             let replacementTextHasDecimalSeparator =
             string.rangeOfString(".")
             
-            // Test that "." is not present both in contents of
-            // textField.text and textField.string (the replace-
-            // ment string of text. If it is, this would indicate
-            // a second decimal point, and the user input should
-            // be disallowed.
+            // Declare a constant to represent the NSCharacterSet
+            // of alphabetic characters.
             
-            if existingTextHasDecimalSeparator != nil &&
+            let alphaCharacters = NSCharacterSet.letterCharacterSet()
+            
+            // Test first that no alphabetic characters have been
+            // entered by user. If so, disallow the string; then
+            // test that "." is not present both in contents of
+            // textField.text and textField.string (the replacement
+            // string of text. If it is, this would indicate a second
+            // decimal point, and the user input should be disallowed.
+            
+            if string.lowercaseString.rangeOfCharacterFromSet(alphaCharacters) != nil   {
+                
+                return false
+                
+            } else if existingTextHasDecimalSeparator != nil &&
                 replacementTextHasDecimalSeparator != nil       {
                     
-                return false
+                    return false
                     
-            }   else    {
+            }   else {
                 
-                    return true
+                return true
                 
-            }   // end if-else
+            }   // end if-else if-else
         
     }   // end func textField
     
