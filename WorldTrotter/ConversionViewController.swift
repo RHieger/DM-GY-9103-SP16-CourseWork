@@ -106,6 +106,65 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         
     }   // end override func viewDidLoad()
     
+    // Override viewWillAppear:
+    
+    // FULL DISCOLOSURE:
+    //
+    // I adapt the override of viewWillAppear from code I
+    // found on the Big Nerd Ranch forum from the book at
+    // the following URL:
+    //
+    // http://forums.bignerdranch.com/viewtopic.php?f=624&t=10879
+    //
+    // I have tried to refine the code a bit, but it is essentially
+    // as found in the forum, with two notable differences.
+    //
+    // I altered the if statement so that we check to see that it is
+    // 6:00 PM or later. I chose a slightly later hour to denote
+    // sunlight hours--7:00 AM. This is arbitrary, but accounts a bit
+    // more for fall or winter months. Of course, more logic could
+    // be added to determine the month and its average sunrise time,
+    // but I left this as a happy medium.
+    //
+    // Additionally, as the Minute NSCalendar component was not even
+    // used in the calculation appearing on the forum, I omitted it
+    // from my code.
+    //
+    // Finally, the lightGrayColor used in the forum was too light,
+    // for my taste, to denote evening or night, for that matter,
+    // so I changed it to darkGrayColor.
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        // Call super implementation of viewWillAppear.
+        
+        super.viewWillAppear(animated)
+        
+        // Now check time of day to determine background color.
+        
+        // Hour component for time of day.
+        
+        let hour =
+        NSCalendar.currentCalendar().component( NSCalendarUnit.Hour,
+            fromDate: NSDate() )
+        
+//        // Minute component for time of day.
+//        
+//        let minute =
+//        NSCalendar.currentCalendar().component( NSCalendarUnit.Minute,
+//            fromDate: NSDate() )
+        
+        // Change background color according to Hour of day.
+        
+        if hour >= 18 || hour < 7  {
+            
+           // If hour is evening, change to darker background color.
+            
+            view.backgroundColor = UIColor.darkGrayColor()
+            
+        }   // end if hour >= 18
+    }
+    
     // Declare Method to update the Celsius Temperature Label.
     
     // First create NumberFormatter to specify only 1 decimal
