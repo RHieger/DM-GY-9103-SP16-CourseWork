@@ -100,7 +100,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFo-Xf-ilh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="368"/>
+            <point key="canvasLocation" x="1430" y="359"/>
+        </scene>
+        <!--Big Nerd Ranch-->
+        <scene sceneID="xRu-vd-sqf">
+            <objects>
+                <viewController id="pZY-KU-k4H" customClass="WebViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3uu-SZ-cn4"/>
+                        <viewControllerLayoutGuide type="bottom" id="RZE-9H-0rl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wis-u8-lzA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVM-te-4ae">
+                                <rect key="frame" x="6" y="20" width="403" height="696"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WVM-te-4ae" firstAttribute="centerY" secondItem="wis-u8-lzA" secondAttribute="centerY" id="52j-k4-R1q"/>
+                            <constraint firstItem="WVM-te-4ae" firstAttribute="top" secondItem="3uu-SZ-cn4" secondAttribute="bottom" id="FZO-rX-sFk"/>
+                            <constraint firstItem="WVM-te-4ae" firstAttribute="leading" secondItem="wis-u8-lzA" secondAttribute="leading" constant="6" id="Quc-I5-gUG"/>
+                            <constraint firstAttribute="trailing" secondItem="WVM-te-4ae" secondAttribute="trailing" constant="5" id="foz-yD-ywz"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Big Nerd Ranch" image="bignerdIcon" id="Nof-xY-9uB"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6EQ-WE-59p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1912" y="359"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CZo-uf-3xO">
@@ -115,6 +147,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Nck-HD-htz"/>
                         <segue destination="i09-so-3fq" kind="relationship" relationship="viewControllers" id="MWq-gs-w2d"/>
+                        <segue destination="pZY-KU-k4H" kind="relationship" relationship="viewControllers" id="qmM-yP-wk8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ptl-mp-3Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,5 +158,6 @@
     <resources>
         <image name="ConvertIcon" width="49" height="33"/>
         <image name="MapIcon" width="49" height="33"/>
+        <image name="bignerdIcon" width="50" height="34"/>
     </resources>
 </document>
