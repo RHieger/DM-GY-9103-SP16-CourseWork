@@ -21,6 +21,20 @@ class ViewController: UIViewController {
         questionLabel.text = questions[currentQuestionIndex]
         
     }   // end viewDidLoad()
+    
+    // Override viewWillAppear().
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        // Call super implementation of viewWillAppear(animated: Bool)
+        
+        super.viewWillAppear(animated)
+        
+        // Set questionLabel's initial alpha value.
+        
+        questionLabel.alpha = 0
+        
+    }   // end override func viewWillAppear(animated: Bool)
 
     // Declare necessary outlets for top and bottom
     // labels in Main.storyboard.
@@ -64,6 +78,8 @@ class ViewController: UIViewController {
         
         answerLabel.text = "???"
         
+        animateLabelTransitions()
+        
     }   // end showNextQuestion(sender: AnyObject)
     
     @IBAction func showAnswer(sender: AnyObject)    {
@@ -75,6 +91,20 @@ class ViewController: UIViewController {
         answerLabel.text = answer
         
     }   // end showAnswer(sender: AnyObject)
+    
+    // METHODS:
+    
+    func animateLabelTransitions()  {
+        
+        // Animate the alpha:
+        
+        UIView.animateWithDuration(0.5, animations: {
+            
+            self.questionLabel.alpha = 1
+        
+        } )
+        
+    }   // end animateLabelTransitions()
 
 }   // end viewController
 
