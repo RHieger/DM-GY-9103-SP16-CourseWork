@@ -56,7 +56,7 @@ class MapViewController: UIViewController   {
         
         // 5. Disable auto-resizing masks.
         
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+//        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
         // 6. Add segmentedControl as sub-view of MapViewController.
         
