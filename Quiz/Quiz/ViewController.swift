@@ -16,9 +16,13 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        // Declare variable to store question:
+        
+        let question = questions[currentQuestionIndex]
+        
         // Set questionLabel to first question in array:
         
-        questionLabel.text = questions[currentQuestionIndex]
+        currentQuestionLabel.text = question
         
     }   // end viewDidLoad()
     
@@ -32,14 +36,18 @@ class ViewController: UIViewController {
         
         // Set questionLabel's initial alpha value.
         
-        questionLabel.alpha = 0
+        nextQuestionLabel.alpha = 0
         
     }   // end override func viewWillAppear(animated: Bool)
 
     // Declare necessary outlets for top and bottom
     // labels in Main.storyboard.
     
-    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var currentQuestionLabel: UILabel!
+    
+    @IBOutlet var nextQuestionLabel: UILabel!
+    
+    
     @IBOutlet var answerLabel: UILabel!
     
     let questions: [String] =
@@ -74,7 +82,7 @@ class ViewController: UIViewController {
         
         let question: String = questions[currentQuestionIndex]
         
-        questionLabel.text = question
+        nextQuestionLabel.text = question
         
         answerLabel.text = "???"
         
@@ -100,11 +108,12 @@ class ViewController: UIViewController {
         
         UIView.animateWithDuration(0.5, animations: {
             
-            self.questionLabel.alpha = 1
+            self.currentQuestionLabel.alpha = 0
+            
+            self.nextQuestionLabel.alpha = 1
         
         } )
         
     }   // end animateLabelTransitions()
 
 }   // end viewController
-
