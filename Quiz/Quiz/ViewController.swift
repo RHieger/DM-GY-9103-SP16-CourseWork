@@ -2,154 +2,115 @@
 //  ViewController.swift
 //  Quiz
 //
-//  Created by Robert Hieger on 1/26/16.
+//  Created by Robert Hieger on 2/28/16.
 //  Copyright © 2016 Hieger Designs. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        
-        // Call superclass of viewDidLoad()
-        
-        super.viewDidLoad()
-        
-        // Declare variable to store question:
-        
-        let question = questions[currentQuestionIndex]
-        
-        // Set questionLabel to first question in array:
-        
-        currentQuestionLabel.text = question
-        
-        updateOffScreenLabel()
-        
-    }   // end viewDidLoad()
-    
-    func updateOffScreenLabel() {
-        
-        // Set the screen width.
-        
-        let screenWidth = view.frame.width
-        
-        nextQuestionLabelCenterXConstraint.constant = -screenWidth
-        
-    }   // end updateOffScreenLael()
-    
-    // Override viewWillAppear().
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        // Call super implementation of viewWillAppear(animated: Bool)
-        
-        super.viewWillAppear(animated)
-        
-        // Set questionLabel's initial alpha value.
-        
-        nextQuestionLabel.alpha = 0
-        
-    }   // end override func viewWillAppear(animated: Bool)
 
-    // Declare necessary outlets for top and bottom
-    // labels in Main.storyboard.
+    // OUTLETS:
     
-    @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet var questionLabel: UILabel!   // Label for questions
     
-    @IBOutlet var currentQuestionLabelCenterXConstraint: NSLayoutConstraint!
+    @IBOutlet var answerLabel: UILabel!     // Label for answers
     
-    @IBOutlet var nextQuestionLabel: UILabel!
     
-    @IBOutlet var nextQuestionLabelCenterXConstraint: NSLayoutConstraint!
+    // MODEL LAYER:
     
-    @IBOutlet var answerLabel: UILabel!
+    // Declare/initialize array constant to contain questions.
     
-    let questions: [String] =
-    ["From what is cognac made?",
-        "What is 7 + 7?",
-        "What is the capital of Vermont?"]
+    let questions: [String] = ["From what is cognac made?",
+                               "What is 7 + 7?",
+                               "What is the capital of Vermont?"]
     
-    let answers: [String] =
-    ["Grapes",
-        "14",
-        "Montpelier"]
     
-    var currentQuestionIndex: Int = 0
+    // Declare/initialize array constant to contain answers.
     
-    @IBAction func showNextQuestion(sender: AnyObject)  {
+    let answers: [String] = ["Grapes",
+                             "14",
+                             "Montpelier"]
+    
+    // Set variable to track the current questions index (to which
+    // question are we pointed?) For purposes of the Model Layer,
+    // we will set the index to the first array element (0).
+    
+    var currentQuestionIndex: Int = 0;
+    
+    
+    // ACTIONS:
+    
+    @IBAction func showNextQuestion(sender: AnyObject) {
         
-        ++currentQuestionIndex      // Using prefix notation, increment
-                                    // current question index.
+        // This action method advances the questionLabel to
+        // the next question specified in the Model Layer
+        // of the Model-View-Control pattern.
         
-        // If currentQuestionIndex is the same as the count of
-        // elements in questions array, set the current index to
-        // 0 to start from beginning:
+        // When "Next Question" button is tapped:
         
-        if currentQuestionIndex == questions.count   {
+        ++currentQuestionIndex      // Advance index to next question.
+        
+        // If current question is the end of questions array,
+        // reset the index to the beginning of the array.
+        
+        if currentQuestionIndex == questions.count  {
             
-            currentQuestionIndex = 0;
+            currentQuestionIndex = 0
             
         }   // end if
         
-        // Specify content for question, questionLabel and
-        // answerLabel views.
+        // Set the contents of the question:
         
         let question: String = questions[currentQuestionIndex]
         
-        nextQuestionLabel.text = question
+        // Set the contents of questionLabel to the text of
+        // the current question:
+        
+        questionLabel.text = question
+        
+        // Make sure to reset the answerLabel to "???"
         
         answerLabel.text = "???"
         
-        animateLabelTransitions()
-        
-    }   // end showNextQuestion(sender: AnyObject)
+    }   // end showNextQuestion()
+    
     
     @IBAction func showAnswer(sender: AnyObject)    {
         
-        // Specify content for answer and answerLabel:
+        // This action method shows the answer associated with
+        // the question at the current question index in the
+        // Model Layer.
+        
+        // When user taps "Show Answer" button, set the contents
+        // of the answer to match current index of questions.
         
         let answer: String = answers[currentQuestionIndex]
+        
+        // Set the text of answerLabel to the text of the
+        // current question:
         
         answerLabel.text = answer
         
     }   // end showAnswer(sender: AnyObject)
     
-    // METHODS:
     
-    func animateLabelTransitions()  {
-        
-        // Animate the alpha and center X constraints.
-        
-        let screenWidth = view.frame.width
-        
-        self.nextQuestionLabelCenterXConstraint.constant = 0
-        
-        self.currentQuestionLabelCenterXConstraint.constant += screenWidth
-        
-        UIView.animateWithDuration(0.5,
-            delay: 0,
-            options: [],
-            animations: {
-                
-                self.currentQuestionLabel.alpha = 0
-                self.nextQuestionLabel.alpha = 1
-                
-                self.view.layoutIfNeeded()
-                
-            },
-            completion: { _ in
-                
-              swap(&self.currentQuestionLabel,
-                   &self.nextQuestionLabel)
-                
-              swap(&self.currentQuestionLabelCenterXConstraint,
-                   &self.nextQuestionLabelCenterXConstraint)
-                
-              self.updateOffScreenLabel()
-                
-            } )
+    // BUILT-IN METHOD OVERRIDES:
     
-    }   // end animateLabelTransitions()
+    // Override viewDidLoad() method:
+    
+    override func viewDidLoad() {
+        
+        // Call superimplementation of viewDidLoad().
+        
+        super.viewDidLoad()
+        
+        // Load the text of the first question into questionLabel
+        // when the program loads.
+        
+        questionLabel.text = questions[currentQuestionIndex]
+        
+    }   // end override func viewDidLoad()
+    
 
-}   // end viewController
+}   // end ViewController: UIViewController

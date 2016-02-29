@@ -17,59 +17,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj3-mt-sIN">
-                                <rect key="frame" x="195" y="20" width="25" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFe-Ue-kH1">
+                                <rect key="frame" x="194.5" y="37" width="25" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1e-i6-l0W">
-                                <rect key="frame" x="158" y="48" width="98" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-Oa-afA">
+                                <rect key="frame" x="158" y="65.5" width="98" height="30"/>
                                 <state key="normal" title="Next Question"/>
                                 <connections>
-                                    <action selector="showNextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="27v-Ti-8e4"/>
+                                    <action selector="showNextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ljm-Be-G1l"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-cQ-yb4">
-                                <rect key="frame" x="161" y="320" width="93" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZo-ow-66Q">
+                                <rect key="frame" x="194.5" y="144.5" width="25" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLE-E0-FEh">
+                                <rect key="frame" x="160.5" y="181" width="93" height="30"/>
                                 <state key="normal" title="Show Answer"/>
                                 <connections>
-                                    <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M7K-yA-iM1"/>
+                                    <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpk-If-Dh2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmr-rv-nuV">
-                                <rect key="frame" x="195" y="288" width="25" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITI-7N-AfJ">
-                                <rect key="frame" x="29" y="20" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="f1e-i6-l0W" firstAttribute="top" secondItem="hj3-mt-sIN" secondAttribute="bottom" constant="8" id="0s5-G5-a1Y"/>
-                            <constraint firstItem="hj3-mt-sIN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="1a2-d5-Wyx"/>
-                            <constraint firstItem="Pmr-rv-nuV" firstAttribute="top" secondItem="f1e-i6-l0W" secondAttribute="bottom" constant="210" id="2z0-fh-IDM"/>
-                            <constraint firstItem="ITI-7N-AfJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7K5-EU-NNP"/>
-                            <constraint firstItem="f1e-i6-l0W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C3H-f5-xou"/>
-                            <constraint firstItem="JfM-cQ-yb4" firstAttribute="centerX" secondItem="f1e-i6-l0W" secondAttribute="centerX" id="CDg-pZ-a5G"/>
-                            <constraint firstItem="Pmr-rv-nuV" firstAttribute="centerX" secondItem="f1e-i6-l0W" secondAttribute="centerX" id="cFj-w2-fwI"/>
-                            <constraint firstItem="hj3-mt-sIN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f6t-7e-OJF"/>
-                            <constraint firstItem="hj3-mt-sIN" firstAttribute="centerX" secondItem="f1e-i6-l0W" secondAttribute="centerX" id="vhO-37-BcX"/>
-                            <constraint firstItem="JfM-cQ-yb4" firstAttribute="top" secondItem="Pmr-rv-nuV" secondAttribute="bottom" constant="11" id="xC4-kO-hI0"/>
+                            <constraint firstItem="xmg-Oa-afA" firstAttribute="top" secondItem="iFe-Ue-kH1" secondAttribute="bottom" constant="8" id="0kg-3K-hf7"/>
+                            <constraint firstItem="jLE-E0-FEh" firstAttribute="centerX" secondItem="xmg-Oa-afA" secondAttribute="centerX" id="1qR-ye-70m"/>
+                            <constraint firstItem="iFe-Ue-kH1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2qk-6o-7Ey"/>
+                            <constraint firstItem="iFe-Ue-kH1" firstAttribute="centerX" secondItem="xmg-Oa-afA" secondAttribute="centerX" id="GXZ-g0-lqe"/>
+                            <constraint firstItem="jLE-E0-FEh" firstAttribute="top" secondItem="iZo-ow-66Q" secondAttribute="bottom" constant="16" id="Zil-f7-iPO"/>
+                            <constraint firstItem="iZo-ow-66Q" firstAttribute="centerX" secondItem="xmg-Oa-afA" secondAttribute="centerX" id="oFY-j7-VzJ"/>
+                            <constraint firstItem="iZo-ow-66Q" firstAttribute="top" secondItem="xmg-Oa-afA" secondAttribute="bottom" constant="49" id="xV3-GG-sG1"/>
+                            <constraint firstItem="iFe-Ue-kH1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="ymJ-Ef-RtS"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="answerLabel" destination="Pmr-rv-nuV" id="LII-5T-hL4"/>
-                        <outlet property="currentQuestionLabel" destination="hj3-mt-sIN" id="cs0-g3-HX3"/>
-                        <outlet property="currentQuestionLabelCenterXConstraint" destination="f6t-7e-OJF" id="maW-Ou-dGi"/>
-                        <outlet property="nextQuestionLabel" destination="ITI-7N-AfJ" id="Rlg-m4-0UN"/>
+                        <outlet property="answerLabel" destination="iZo-ow-66Q" id="5z5-eu-xdf"/>
+                        <outlet property="questionLabel" destination="iFe-Ue-kH1" id="Dhf-tj-uKm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
