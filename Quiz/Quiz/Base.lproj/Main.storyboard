@@ -23,6 +23,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VY-qA-zsL">
+                                <rect key="frame" x="194.5" y="37" width="25" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-Oa-afA">
                                 <rect key="frame" x="158" y="65.5" width="98" height="30"/>
                                 <state key="normal" title="Next Question"/>
@@ -52,6 +58,8 @@
                             <constraint firstItem="iFe-Ue-kH1" firstAttribute="centerX" secondItem="xmg-Oa-afA" secondAttribute="centerX" id="GXZ-g0-lqe"/>
                             <constraint firstItem="jLE-E0-FEh" firstAttribute="top" secondItem="iZo-ow-66Q" secondAttribute="bottom" constant="16" id="Zil-f7-iPO"/>
                             <constraint firstItem="iZo-ow-66Q" firstAttribute="centerX" secondItem="xmg-Oa-afA" secondAttribute="centerX" id="oFY-j7-VzJ"/>
+                            <constraint firstItem="3VY-qA-zsL" firstAttribute="top" secondItem="iFe-Ue-kH1" secondAttribute="top" id="oXI-Zy-yDt"/>
+                            <constraint firstItem="3VY-qA-zsL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wg8-rr-cSJ"/>
                             <constraint firstItem="iZo-ow-66Q" firstAttribute="top" secondItem="xmg-Oa-afA" secondAttribute="bottom" constant="49" id="xV3-GG-sG1"/>
                             <constraint firstItem="iFe-Ue-kH1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="ymJ-Ef-RtS"/>
                         </constraints>
@@ -59,7 +67,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="answerLabel" destination="iZo-ow-66Q" id="5z5-eu-xdf"/>
-                        <outlet property="questionLabel" destination="iFe-Ue-kH1" id="Dhf-tj-uKm"/>
+                        <outlet property="currentQuestionLabel" destination="iFe-Ue-kH1" id="UWE-vp-cQY"/>
+                        <outlet property="nextQuestionLabel" destination="3VY-qA-zsL" id="tsJ-DT-7GG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

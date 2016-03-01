@@ -12,7 +12,11 @@ class ViewController: UIViewController {
 
     // OUTLETS:
     
-    @IBOutlet var questionLabel: UILabel!   // Label for questions
+    @IBOutlet var currentQuestionLabel: UILabel!    // Label for current
+                                                    // question
+    
+    @IBOutlet var nextQuestionLabel: UILabel!       // Label for next
+                                                    // question
     
     @IBOutlet var answerLabel: UILabel!     // Label for answers
     
@@ -67,7 +71,7 @@ class ViewController: UIViewController {
         // Set the contents of questionLabel to the text of
         // the current question:
         
-        questionLabel.text = question
+        nextQuestionLabel.text = question
         
         // Make sure to reset the answerLabel to "???"
         
@@ -112,7 +116,11 @@ class ViewController: UIViewController {
         // Load the text of the first question into questionLabel
         // when the program loads.
         
-        questionLabel.text = questions[currentQuestionIndex]
+        currentQuestionLabel.text = questions[currentQuestionIndex]
+        
+        // Set nextQuestionLabel opacity to 0.0%.
+        
+        nextQuestionLabel.alpha = 0
         
     }   // end override func viewDidLoad()
     
@@ -125,9 +133,9 @@ class ViewController: UIViewController {
         
         super.viewWillAppear(animated)
         
-        // Set initial opacity of questionLabel to 0.0%.
+        // Set initial opacity of nextQuestionLabel to 0.0%.
         
-        questionLabel.alpha = 0
+        nextQuestionLabel.alpha = 0
         
         // For this slight modification, I am indebted to a posting
         // on the Big Nerd Ranch Forum for the book at the following
@@ -135,7 +143,16 @@ class ViewController: UIViewController {
         //
         // http://forums.bignerdranch.com/viewtopic.php?f=627&t=10994
         
-        animateLabelTransitions()   // Fade label in.
+        
+        
+        // animateLabelTransitions()   // Fade label in.
+        
+        // NOTE: After using currentQuestionLabel and nextQuestionLabel
+        //       outlets, calling animateLabelTransitions in
+        //       viewWillAppear(animated: Bool) causes the first
+        //       question to appear for a split second to be replaced
+        //       immediately by "???". This issue seems to be fixed by
+        //       commenting out animateLabelTransitions at this point.
         
     }   // end override func viewWillAppear(animated: Bool)
     
@@ -149,9 +166,13 @@ class ViewController: UIViewController {
         
         UIView.animateWithDuration(0.5, animations: {
             
-            // Set the opacity of questionLabel to 100%.
+            // Set the opacity of currentQuestionLabel to 0.0%.
             
-            self.questionLabel.alpha = 1
+            self.currentQuestionLabel.alpha = 0
+            
+            // Set the opacity of nextQuestionLabel to 100%.
+            
+            self.nextQuestionLabel.alpha = 1
             
         })  // end UIView.animateWithDuration(0.5, animations:)
         
