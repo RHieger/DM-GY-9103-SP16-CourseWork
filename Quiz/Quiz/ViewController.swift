@@ -112,5 +112,51 @@ class ViewController: UIViewController {
         
     }   // end override func viewDidLoad()
     
-
+    
+    // Override viewWillAppear() method:
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        // Call the super implementation of viewWillAppear().
+        
+        super.viewWillAppear(animated)
+        
+        // Set initial opacity of questionLabel to 0.0%.
+        
+        questionLabel.alpha = 0
+        
+        // For this slight modification, I am indebted to a posting
+        // on the Big Nerd Ranch Forum for the book at the following
+        // URL:
+        //
+        // http://forums.bignerdranch.com/viewtopic.php?f=627&t=10994
+        
+        animateLabelTransitions()   // Fade label in.
+        
+    }   // end override func viewWillAppear(animated: Bool)
+    
+    
+    // METHODS:
+    
+    func animateLabelTransitions()  {
+        
+        // This method will be used to fade in the text
+        // assigned to each instance of questionLabel.
+        
+        let animationClosure = {
+            
+            () -> Void in
+            
+            // Set the opacity of questionLabel to 100%.
+            
+            self.questionLabel.alpha = 1
+            
+        }   // end animationClosure
+        
+        // Animate fade-in of questionLabel opacity to 100%.
+        
+        UIView.animateWithDuration(0.5, animations: animationClosure)
+        
+    }   // end animateLabelTransitions()
+   
 }   // end ViewController: UIViewController
