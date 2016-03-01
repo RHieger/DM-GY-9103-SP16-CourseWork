@@ -55,7 +55,7 @@
                             <constraint firstItem="xmg-Oa-afA" firstAttribute="top" secondItem="iFe-Ue-kH1" secondAttribute="bottom" constant="8" id="0kg-3K-hf7"/>
                             <constraint firstItem="jLE-E0-FEh" firstAttribute="centerX" secondItem="xmg-Oa-afA" secondAttribute="centerX" id="1qR-ye-70m"/>
                             <constraint firstItem="iFe-Ue-kH1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2qk-6o-7Ey"/>
-                            <constraint firstItem="iFe-Ue-kH1" firstAttribute="centerX" secondItem="xmg-Oa-afA" secondAttribute="centerX" id="GXZ-g0-lqe"/>
+                            <constraint firstItem="xmg-Oa-afA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AaV-tR-6hc"/>
                             <constraint firstItem="jLE-E0-FEh" firstAttribute="top" secondItem="iZo-ow-66Q" secondAttribute="bottom" constant="16" id="Zil-f7-iPO"/>
                             <constraint firstItem="iZo-ow-66Q" firstAttribute="centerX" secondItem="xmg-Oa-afA" secondAttribute="centerX" id="oFY-j7-VzJ"/>
                             <constraint firstItem="3VY-qA-zsL" firstAttribute="top" secondItem="iFe-Ue-kH1" secondAttribute="top" id="oXI-Zy-yDt"/>
@@ -68,11 +68,14 @@
                     <connections>
                         <outlet property="answerLabel" destination="iZo-ow-66Q" id="5z5-eu-xdf"/>
                         <outlet property="currentQuestionLabel" destination="iFe-Ue-kH1" id="UWE-vp-cQY"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="2qk-6o-7Ey" id="b68-pf-hb8"/>
                         <outlet property="nextQuestionLabel" destination="3VY-qA-zsL" id="tsJ-DT-7GG"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="wg8-rr-cSJ" id="RB6-sZ-1sS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="308" y="378"/>
         </scene>
     </scenes>
 </document>

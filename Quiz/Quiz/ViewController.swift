@@ -15,8 +15,16 @@ class ViewController: UIViewController {
     @IBOutlet var currentQuestionLabel: UILabel!    // Label for current
                                                     // question
     
+    // Center X Constraint for currentQuestionLabel:
+    
+    @IBOutlet var currentQuestionLabelCenterXConstraint: NSLayoutConstraint!
+    
     @IBOutlet var nextQuestionLabel: UILabel!       // Label for next
                                                     // question
+    
+    // Center X Constraint for nextQuestionLabel:
+    
+    @IBOutlet var nextQuestionLabelCenterXConstraint: NSLayoutConstraint!
     
     @IBOutlet var answerLabel: UILabel!     // Label for answers
     
@@ -161,22 +169,66 @@ class ViewController: UIViewController {
     
     func animateLabelTransitions()  {
         
-        // This method will be used to fade in the text
-        // assigned to each instance of questionLabel.
+        // Animate the opacity and center x constraints of
+        // currentQuestionLabel and nextQuestionLabel:
+        
+        // Set the screen width.
+        
+        let screenWidth = view.frame.width
+        
+        // Set the center x constraint for nextQuestionLabel:
+        
+        self.nextQuestionLabelCenterXConstraint.constant = 0
+        
+        // Set the center x constraint for currentQuestionLabel:
+        
+        self.currentQuestionLabelCenterXConstraint.constant += screenWidth
+        
+        // Animate the opacity of currentQuestionLabel
+        // and nextQuestionLabel.
         
         UIView.animateWithDuration(0.5,
             delay: 0,
             options: [],
             animations: {
-                self.currentQuestionLabel.alpha = 0
-                self.nextQuestionLabel.alpha = 1
+                self.currentQuestionLabel.alpha = 0 // transparent
+                self.nextQuestionLabel.alpha = 1    // 100% opaque
+                self.view.layoutIfNeeded()          // update layout
             },
-            
             completion: { _ in
+                
+                // Swap the currentQuestionLabel with
+                // the nextQuestionLabel.
+                
                 swap(&self.currentQuestionLabel,
                      &self.nextQuestionLabel)
-        })
+                
+                // Swap the center x value
+                // of currentQuestionLabelCenterXConstraint
+                // for nextQuestionLabelCenterXConstraint.
+                
+                swap(&self.currentQuestionLabelCenterXConstraint,
+                     &self.nextQuestionLabelCenterXConstraint)
+                
+                // Update the off screen label:
+                
+                self.updateOffScreenLabel()
+                
+        })  // end UIView.animateWithDuration
         
     }   // end animateLabelTransitions()
+    
+    func updateOffScreenLabel() {
+        
+        // Set the screen width:
+        
+        let screenWidth = view.frame.width
+        
+        // Set center x of nextQuestionLabel one screen width
+        // to the left.
+        
+        nextQuestionLabelCenterXConstraint.constant = -screenWidth
+        
+    }   // end func updateOffScreenLabel()
    
 }   // end ViewController: UIViewController
