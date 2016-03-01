@@ -164,17 +164,18 @@ class ViewController: UIViewController {
         // This method will be used to fade in the text
         // assigned to each instance of questionLabel.
         
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animateWithDuration(0.5,
+            delay: 0,
+            options: [],
+            animations: {
+                self.currentQuestionLabel.alpha = 0
+                self.nextQuestionLabel.alpha = 1
+            },
             
-            // Set the opacity of currentQuestionLabel to 0.0%.
-            
-            self.currentQuestionLabel.alpha = 0
-            
-            // Set the opacity of nextQuestionLabel to 100%.
-            
-            self.nextQuestionLabel.alpha = 1
-            
-        })  // end UIView.animateWithDuration(0.5, animations:)
+            completion: { _ in
+                swap(&self.currentQuestionLabel,
+                     &self.nextQuestionLabel)
+        })
         
     }   // end animateLabelTransitions()
    
