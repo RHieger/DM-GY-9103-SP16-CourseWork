@@ -73,6 +73,10 @@ class ViewController: UIViewController {
         
         answerLabel.text = "???"
         
+        // Animate the questionLabel fade-in:
+        
+        animateLabelTransitions()
+        
     }   // end showNextQuestion()
     
     
@@ -143,19 +147,13 @@ class ViewController: UIViewController {
         // This method will be used to fade in the text
         // assigned to each instance of questionLabel.
         
-        let animationClosure = {
-            
-            () -> Void in
+        UIView.animateWithDuration(0.5, animations: {
             
             // Set the opacity of questionLabel to 100%.
             
             self.questionLabel.alpha = 1
             
-        }   // end animationClosure
-        
-        // Animate fade-in of questionLabel opacity to 100%.
-        
-        UIView.animateWithDuration(0.5, animations: animationClosure)
+        })  // end UIView.animateWithDuration(0.5, animations:)
         
     }   // end animateLabelTransitions()
    
