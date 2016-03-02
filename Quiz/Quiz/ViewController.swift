@@ -193,6 +193,8 @@ class ViewController: UIViewController {
         
         UIView.animateWithDuration(0.5,
             delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 50,
             options: [.CurveLinear],
             animations: {
                 self.currentQuestionLabel.alpha = 0 // transparent
@@ -201,24 +203,23 @@ class ViewController: UIViewController {
             },
             
             completion: { _ in
-                
                 // Swap the currentQuestionLabel with
                 // the nextQuestionLabel.
                 
                 swap(&self.currentQuestionLabel,
-                     &self.nextQuestionLabel)
+                    &self.nextQuestionLabel)
                 
                 // Swap the center x value
                 // of currentQuestionLabelCenterXConstraint
                 // for nextQuestionLabelCenterXConstraint.
                 
                 swap(&self.currentQuestionLabelCenterXConstraint,
-                     &self.nextQuestionLabelCenterXConstraint)
+                    &self.nextQuestionLabelCenterXConstraint)
                 
                 // Update the off screen label:
                 
                 self.updateOffScreenLabel()
-                
+
         })  // end UIView.animateWithDuration
         
     }   // end animateLabelTransitions()
