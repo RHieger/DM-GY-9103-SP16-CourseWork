@@ -193,12 +193,13 @@ class ViewController: UIViewController {
         
         UIView.animateWithDuration(0.5,
             delay: 0,
-            options: [],
+            options: [.CurveLinear],
             animations: {
                 self.currentQuestionLabel.alpha = 0 // transparent
                 self.nextQuestionLabel.alpha = 1    // 100% opaque
                 self.view.layoutIfNeeded()          // update layout
             },
+            
             completion: { _ in
                 
                 // Swap the currentQuestionLabel with
