@@ -169,6 +169,10 @@ class ViewController: UIViewController {
     
     func animateLabelTransitions()  {
         
+        // Force any outstanding layout changes to occur:
+        
+        view.layoutIfNeeded()
+        
         // Animate the opacity and center x constraints of
         // currentQuestionLabel and nextQuestionLabel:
         
