@@ -22,4 +22,23 @@ class ItemStore {
     
      var allItems = [Item]()        // Array of Item instances
     
+    
+    // METHODS:
+    
+    func createItem() -> Item   {
+        
+        // Instantiate item object.
+        
+        let newItem = Item(random: true)
+        
+        // Add newItem to allItems array.
+        
+        allItems.append(newItem)
+        
+        // Return newItem to calling method.
+        
+        return newItem
+        
+    }   // end createItem() -> Item
+    
 }   // end ItemStore
