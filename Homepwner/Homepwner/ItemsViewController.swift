@@ -47,11 +47,12 @@ class ItemsViewController: UITableViewController {
     override func tableView(tableView: UITableView,
       cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell  {
             
-        // Instantiate UITableViewCell object with default style.
-                    
-        let cell = UITableViewCell(style: .Value1,
-                         reuseIdentifier: "UITableViewCell")
-                    
+        // Get a reusable or new UITableViewCell.
+        
+        let cell =
+        tableView.dequeueReusableCellWithIdentifier("UITableViewCell",
+            forIndexPath: indexPath)
+        
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear on the tableView.
@@ -59,7 +60,7 @@ class ItemsViewController: UITableViewController {
         let item = itemStore.allItems[indexPath.row]
                     
         // Set the text content of the item name.
-                    
+        
         cell.textLabel?.text = item.name
                     
         // Set the text content of the item dollar value.
