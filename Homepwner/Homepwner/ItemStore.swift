@@ -18,6 +18,8 @@ import UIKit
 
 class ItemStore {
     
-    // Place code here.
+    // PROPERTIES:
+    
+     var allItems = [Item]()        // Array of Item instances
     
 }   // end ItemStore
