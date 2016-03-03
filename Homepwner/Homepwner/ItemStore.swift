@@ -41,4 +41,19 @@ class ItemStore {
         
     }   // end createItem() -> Item
     
+    
+    // DESIGNATED INITIALIZER:
+    
+    init()  {
+        
+        for _ in 0..<5 {
+            
+            // Instantiate 5 Item objects.
+            
+            createItem()
+            
+        }   // end for _ in
+        
+    }
+    
 }   // end ItemStore
