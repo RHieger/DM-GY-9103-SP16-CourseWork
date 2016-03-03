@@ -19,6 +19,8 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     
-    // Place code here.
+    // PROPERTIES:
+    
+    var itemStore: ItemStore!   // Instantiate ItemStore object.
     
 }   //  end ItemsViewController
