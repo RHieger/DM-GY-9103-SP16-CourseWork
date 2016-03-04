@@ -24,6 +24,40 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!   // Instantiate ItemStore object.
     
     
+    // OVERRIDE BUILT-IN METHODS:
+    
+    // Override viewDidLoad().
+    
+    override func viewDidLoad() {
+        
+        // Call super impementation of viewDidLoad().
+        
+        super.viewDidLoad()
+        
+        // Get the height of the status bar.
+        
+        let statusBarHeight =
+        UIApplication.sharedApplication().statusBarFrame.height
+        
+        // Set the insets for the UITableView using statusBarHeight
+        // for the top inset and 0 for all other insets.
+        
+        let insets = UIEdgeInsets(top: statusBarHeight,
+                                 left: 0,
+                               bottom: 0,
+                                right: 0)
+        
+        // Set tableView content insets.
+        
+        tableView.contentInset = insets
+        
+        // Set tableView scroll indicator insets.
+        
+        tableView.scrollIndicatorInsets = insets
+        
+    }   // end viewDidLoad()
+    
+    
     // METHODS:
     
     // Override tableView(tableView: UITableView,
