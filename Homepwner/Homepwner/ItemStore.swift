@@ -52,4 +52,32 @@ class ItemStore {
         
     }   // end removeItem(Item: item)
     
+    func moveItemAtIndex(fromIndex: Int, toIndex: Int)  {
+        
+        // If fromIndex and toIndex are equal to one another,
+        // that is, if the move has already taken place,
+        // do nothing.
+        
+        if fromIndex == toIndex {
+            
+            return
+            
+        }   // end if
+        
+        // Temporarily store row at fromIndex to movedItem
+        // so that it may be referenced in the move.
+        
+        let movedItem = allItems[fromIndex]
+        
+        // Now delete item at fromIndex from allItems array.
+        
+        allItems.removeAtIndex(fromIndex)
+        
+        // Insert movedItem at new location.
+        
+        allItems.insert(movedItem, atIndex: toIndex)
+        
+    }   // end moveItemAtIndex(fromIndex: Int, toIndex: Int)
+    
+    
 }   // end ItemStore
