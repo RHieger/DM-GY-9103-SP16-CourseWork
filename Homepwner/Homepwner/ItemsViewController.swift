@@ -27,7 +27,18 @@ class ItemsViewController: UITableViewController {
     
     @IBAction func addNewItem(sender: AnyObject)    {
         
+        // Make a new IndexPath for the 0th section, last row.
         
+        let lastRow = tableView.numberOfRowsInSection(0)
+        
+        // Set the IndexPath.
+        
+        let indexPath = NSIndexPath(forRow: lastRow, inSection: 0)
+        
+        // Insert the new row into the table view.
+        
+        tableView.insertRowsAtIndexPaths([indexPath],
+            withRowAnimation: .Automatic)
         
     }   // end addNewItem(sender: AnyObject)
     
