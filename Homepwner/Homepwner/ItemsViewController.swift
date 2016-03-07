@@ -163,4 +163,34 @@ class ItemsViewController: UITableViewController {
             
     }   // end tableView(_:cellForRowAtIndexPath:)
     
+    // Override tableView(tableView: UITableView,
+    //                    commitEditingStyle editingStyle:
+    //                    UITableViewCellEditingStyle,
+    //                    forRowAtIndexPath indexPath: NSIndexPath)
+    
+    override func tableView(tableView: UITableView,
+        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+        forRowAtIndexPath indexPath: NSIndexPath)                    {
+            
+        // If the tableView is asking to commit a delete command...
+            
+        if editingStyle == .Delete  {
+                
+            // Specify the row for deletion.
+            
+            let item = itemStore.allItems[indexPath.row]
+            
+            // Remove the item from itemStore
+            
+            itemStore.removeItem(item)
+                
+        }   // end if
+            
+        // Also remove that row from table with an animation.
+            
+        tableView.deleteRowsAtIndexPaths([indexPath],
+            withRowAnimation: .Automatic)
+            
+    }
+    
 }   //  end ItemsViewController
