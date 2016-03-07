@@ -41,4 +41,15 @@ class ItemStore {
         
     }   // end createItem() -> Item
     
+    
+    func removeItem(item: Item)     {
+        
+        if let index = allItems.indexOf(item)   {
+            
+            allItems.removeAtIndex(index)
+            
+        }   // end removeItem(item: Item)
+        
+    }   // end removeItem(Item: item)
+    
 }   // end ItemStore
