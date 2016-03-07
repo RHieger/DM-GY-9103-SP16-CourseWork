@@ -22,14 +22,14 @@ import UIKit
 struct ItemSection {
     
     var head: String                // Header for table section
-    var randomItems: [String]       // Item beneath header
+//    var randomItems: [String]       // Item beneath header
     
     // Initialize all properties:
     
-    init( title: String, objects: [String] )    {
+    init(title: String)    {
         
         head = title
-        randomItems = objects
+//        randomItems = objects
         
     }   // end init()
     

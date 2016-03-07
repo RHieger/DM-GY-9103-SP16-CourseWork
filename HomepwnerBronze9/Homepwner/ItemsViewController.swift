@@ -28,7 +28,7 @@ class ItemsViewController: UITableViewController {
     
     // PROPERTIES:
     
-    var itemSections: [Section] = itemSectionsData().getSectionsFromData()
+    var itemSections: [ItemSection] = ItemSectionsData.getSectionsFromData()
     
     var itemStore: ItemStore!   // Instantiate ItemStore object.
     
