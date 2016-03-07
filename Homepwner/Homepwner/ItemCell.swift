@@ -22,6 +22,10 @@ import UIKit
 
 class ItemCell: UITableViewCell {
     
-    // Place code here.
+    // IBOUTLETS:
+    
+    @IBOutlet var nameLabel: UILabel!               // Name of Item
+    @IBOutlet var serialNumberLabel: UILabel!       // Serial Number
+    @IBOutlet var valueLabel: UILabel!              // Price of Item
     
 }   // end ItemCell: UITableViewCell
