@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C506B27B1C8E35F200BF5BD4 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506B27A1C8E35F200BF5BD4 /* ItemCell.swift */; };
 		C5ED9CA91C86BFFE00F56833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED9CA81C86BFFE00F56833 /* AppDelegate.swift */; };
 		C5ED9CAE1C86BFFE00F56833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ED9CAC1C86BFFE00F56833 /* Main.storyboard */; };
 		C5ED9CB01C86BFFE00F56833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5ED9CAF1C86BFFE00F56833 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C506B27A1C8E35F200BF5BD4 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		C5ED9CA51C86BFFE00F56833 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5ED9CA81C86BFFE00F56833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5ED9CAD1C86BFFE00F56833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				C5ED9CA81C86BFFE00F56833 /* AppDelegate.swift */,
 				C5ED9CC01C87FD3700F56833 /* ItemsViewController.swift */,
+				C506B27A1C8E35F200BF5BD4 /* ItemCell.swift */,
 				C5ED9CC21C88032D00F56833 /* Item.swift */,
 				C5ED9CC41C8810CB00F56833 /* ItemStore.swift */,
 				C5ED9CAC1C86BFFE00F56833 /* Main.storyboard */,
@@ -146,6 +149,7 @@
 				C5ED9CC31C88032D00F56833 /* Item.swift in Sources */,
 				C5ED9CC51C8810CB00F56833 /* ItemStore.swift in Sources */,
 				C5ED9CA91C86BFFE00F56833 /* AppDelegate.swift in Sources */,
+				C506B27B1C8E35F200BF5BD4 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
