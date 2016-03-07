@@ -44,7 +44,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="65" id="vqO-EQ-ZSB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="65" id="vqO-EQ-ZSB" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vqO-EQ-ZSB" id="3Az-iy-Jce">
@@ -79,6 +79,12 @@
                                         <constraint firstItem="O7j-z2-IR6" firstAttribute="centerY" secondItem="3Az-iy-Jce" secondAttribute="centerY" id="nEQ-cf-fDC"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="nti-ax-gcW" id="YNv-nA-Egv"/>
+                                    <outlet property="selectedBackgroundView" destination="nti-ax-gcW" id="Dm6-mk-1uy"/>
+                                    <outlet property="serialNumberLabel" destination="EEb-Dn-DhU" id="dmF-Zh-7tZ"/>
+                                    <outlet property="valueLabel" destination="O7j-z2-IR6" id="M4A-Qn-vlD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
