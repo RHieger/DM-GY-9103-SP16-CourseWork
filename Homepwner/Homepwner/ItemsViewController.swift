@@ -27,19 +27,23 @@ class ItemsViewController: UITableViewController {
     
     @IBAction func addNewItem(sender: AnyObject)    {
         
-        // Make a new IndexPath for the 0th section, last row.
+        // Instantiate a new Item and add it to ItemStore.
         
-        let lastRow = tableView.numberOfRowsInSection(0)
+        let newItem = itemStore.createItem()
         
-        // Set the IndexPath.
+        // Figure out where that item is in the array.
         
-        let indexPath = NSIndexPath(forRow: lastRow, inSection: 0)
-        
-        // Insert the new row into the table view.
-        
-        tableView.insertRowsAtIndexPaths([indexPath],
-            withRowAnimation: .Automatic)
-        
+        if let index = itemStore.allItems.indexOf(newItem)  {
+            
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            
+            // Insert this new row into the table.
+            
+            tableView.insertRowsAtIndexPaths([indexPath],
+                withRowAnimation: .Automatic)
+            
+        }   // end if
+    
     }   // end addNewItem(sender: AnyObject)
     
     
