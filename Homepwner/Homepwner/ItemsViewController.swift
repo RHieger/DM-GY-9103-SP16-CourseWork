@@ -163,6 +163,26 @@ class ItemsViewController: UITableViewController {
             
     }   // end tableView(_:cellForRowAtIndexPath:)
     
+    // Override (_:titleForDeleteConfirmationButtonForRowAtIndexPath:).
+    
+    // FULL DISCLOSURE: For this method, I am indebted to a Stack Overflow
+    //                  article at the following URL:
+    //
+    // http://stackoverflow.com/questions/7394988/how-to-change-uitableview-delete-button-text
+    
+    // NOTE: This implementation goes beyond the requirements of the
+    //       Bronze Challenge, customizing both the button and title
+    //       text of the Action Alert, and changes the text displayed
+    //       by the default delete button so that it reads "Remove."
+    //       I chose to do this so that wording was consistent all the
+    //       way across the deletion action and the Action Alert.
+    
+    override func tableView(tableView: UITableView,
+        titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "Remove"
+    }
+    
+    
     // Override tableView(tableView: UITableView,
     //                    commitEditingStyle editingStyle:
     //                    UITableViewCellEditingStyle,
@@ -184,11 +204,11 @@ class ItemsViewController: UITableViewController {
             // that user wishes to delete the selected row
             // from the table.
             
-            let title = "Delete \(item.name)"   // Alert title
+            let title = "Remove \(item.name)"   // Alert title
             
             // Alert message:
             
-            let message = "Are you sure you want to delete this item?"
+            let message = "Are you sure you want to remove this item?"
             
             // Configure alert:
             
@@ -207,7 +227,7 @@ class ItemsViewController: UITableViewController {
             
             // Define delete action:
             
-            let deleteAction = UIAlertAction(title: "Delete",
+            let deleteAction = UIAlertAction(title: "Remove",
                 style: .Destructive,
                 handler: {
                     
