@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C5ED9CA41C86BFFE00F56833"
-               BuildableName = "Homepwner.app"
-               BlueprintName = "Homepwner"
-               ReferencedContainer = "container:Homepwner.xcodeproj">
+               BuildableName = "HomepwnerBronze9.app"
+               BlueprintName = "HomepwnerBronze9"
+               ReferencedContainer = "container:HomepwnerBronze9.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C5ED9CA41C86BFFE00F56833"
-            BuildableName = "Homepwner.app"
-            BlueprintName = "Homepwner"
-            ReferencedContainer = "container:Homepwner.xcodeproj">
+            BuildableName = "HomepwnerBronze9.app"
+            BlueprintName = "HomepwnerBronze9"
+            ReferencedContainer = "container:HomepwnerBronze9.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C5ED9CA41C86BFFE00F56833"
-            BuildableName = "Homepwner.app"
-            BlueprintName = "Homepwner"
-            ReferencedContainer = "container:Homepwner.xcodeproj">
+            BuildableName = "HomepwnerBronze9.app"
+            BlueprintName = "HomepwnerBronze9"
+            ReferencedContainer = "container:HomepwnerBronze9.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C5ED9CA41C86BFFE00F56833"
-            BuildableName = "Homepwner.app"
-            BlueprintName = "Homepwner"
-            ReferencedContainer = "container:Homepwner.xcodeproj">
+            BuildableName = "HomepwnerBronze9.app"
+            BlueprintName = "HomepwnerBronze9"
+            ReferencedContainer = "container:HomepwnerBronze9.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

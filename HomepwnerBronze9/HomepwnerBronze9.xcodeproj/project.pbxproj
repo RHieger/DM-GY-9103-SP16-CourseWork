@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5790B2B1C8CF6A700BE8423 /* temp.txt in Sources */ = {isa = PBXBuildFile; fileRef = C5790B2A1C8CF6A700BE8423 /* temp.txt */; };
+		C5790B2D1C8CF90100BE8423 /* ItemSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5790B2C1C8CF90100BE8423 /* ItemSection.swift */; };
+		C5790B2F1C8CFDB600BE8423 /* ItemSectionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5790B2E1C8CFDB600BE8423 /* ItemSectionsData.swift */; };
 		C5ED9CA91C86BFFE00F56833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED9CA81C86BFFE00F56833 /* AppDelegate.swift */; };
 		C5ED9CAE1C86BFFE00F56833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ED9CAC1C86BFFE00F56833 /* Main.storyboard */; };
 		C5ED9CB01C86BFFE00F56833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5ED9CAF1C86BFFE00F56833 /* Assets.xcassets */; };
@@ -17,7 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C5ED9CA51C86BFFE00F56833 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5790B2A1C8CF6A700BE8423 /* temp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = temp.txt; sourceTree = "<group>"; };
+		C5790B2C1C8CF90100BE8423 /* ItemSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSection.swift; sourceTree = "<group>"; };
+		C5790B2E1C8CFDB600BE8423 /* ItemSectionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSectionsData.swift; sourceTree = "<group>"; };
+		C5ED9CA51C86BFFE00F56833 /* HomepwnerBronze9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomepwnerBronze9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5ED9CA81C86BFFE00F56833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5ED9CAD1C86BFFE00F56833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5ED9CAF1C86BFFE00F56833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,7 +48,7 @@
 		C5ED9C9C1C86BFFE00F56833 = {
 			isa = PBXGroup;
 			children = (
-				C5ED9CA71C86BFFE00F56833 /* Homepwner */,
+				C5ED9CA71C86BFFE00F56833 /* HomepwnerBronze9 */,
 				C5ED9CA61C86BFFE00F56833 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,16 +56,19 @@
 		C5ED9CA61C86BFFE00F56833 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C5ED9CA51C86BFFE00F56833 /* Homepwner.app */,
+				C5ED9CA51C86BFFE00F56833 /* HomepwnerBronze9.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C5ED9CA71C86BFFE00F56833 /* Homepwner */ = {
+		C5ED9CA71C86BFFE00F56833 /* HomepwnerBronze9 */ = {
 			isa = PBXGroup;
 			children = (
 				C5ED9CA81C86BFFE00F56833 /* AppDelegate.swift */,
 				C5ED9CC01C87FD3700F56833 /* ItemsViewController.swift */,
+				C5790B2C1C8CF90100BE8423 /* ItemSection.swift */,
+				C5790B2E1C8CFDB600BE8423 /* ItemSectionsData.swift */,
+				C5790B2A1C8CF6A700BE8423 /* temp.txt */,
 				C5ED9CC21C88032D00F56833 /* Item.swift */,
 				C5ED9CC41C8810CB00F56833 /* ItemStore.swift */,
 				C5ED9CAC1C86BFFE00F56833 /* Main.storyboard */,
@@ -67,15 +76,16 @@
 				C5ED9CB11C86BFFE00F56833 /* LaunchScreen.storyboard */,
 				C5ED9CB41C86BFFE00F56833 /* Info.plist */,
 			);
+			name = HomepwnerBronze9;
 			path = Homepwner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C5ED9CA41C86BFFE00F56833 /* Homepwner */ = {
+		C5ED9CA41C86BFFE00F56833 /* HomepwnerBronze9 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C5ED9CB71C86BFFE00F56833 /* Build configuration list for PBXNativeTarget "Homepwner" */;
+			buildConfigurationList = C5ED9CB71C86BFFE00F56833 /* Build configuration list for PBXNativeTarget "HomepwnerBronze9" */;
 			buildPhases = (
 				C5ED9CA11C86BFFE00F56833 /* Sources */,
 				C5ED9CA21C86BFFE00F56833 /* Frameworks */,
@@ -85,9 +95,9 @@
 			);
 			dependencies = (
 			);
-			name = Homepwner;
+			name = HomepwnerBronze9;
 			productName = Homepwner;
-			productReference = C5ED9CA51C86BFFE00F56833 /* Homepwner.app */;
+			productReference = C5ED9CA51C86BFFE00F56833 /* HomepwnerBronze9.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C5ED9CA01C86BFFE00F56833 /* Build configuration list for PBXProject "Homepwner" */;
+			buildConfigurationList = C5ED9CA01C86BFFE00F56833 /* Build configuration list for PBXProject "HomepwnerBronze9" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -119,7 +129,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C5ED9CA41C86BFFE00F56833 /* Homepwner */,
+				C5ED9CA41C86BFFE00F56833 /* HomepwnerBronze9 */,
 			);
 		};
 /* End PBXProject section */
@@ -144,7 +154,10 @@
 			files = (
 				C5ED9CC11C87FD3700F56833 /* ItemsViewController.swift in Sources */,
 				C5ED9CC31C88032D00F56833 /* Item.swift in Sources */,
+				C5790B2F1C8CFDB600BE8423 /* ItemSectionsData.swift in Sources */,
+				C5790B2D1C8CF90100BE8423 /* ItemSection.swift in Sources */,
 				C5ED9CC51C8810CB00F56833 /* ItemStore.swift in Sources */,
+				C5790B2B1C8CF6A700BE8423 /* temp.txt in Sources */,
 				C5ED9CA91C86BFFE00F56833 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +273,7 @@
 				INFOPLIST_FILE = Homepwner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiegerdesigns.HomepwnerBronze9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HomepwnerBronze9;
 			};
 			name = Debug;
 		};
@@ -272,14 +285,14 @@
 				INFOPLIST_FILE = Homepwner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiegerdesigns.HomepwnerBronze9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HomepwnerBronze9;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C5ED9CA01C86BFFE00F56833 /* Build configuration list for PBXProject "Homepwner" */ = {
+		C5ED9CA01C86BFFE00F56833 /* Build configuration list for PBXProject "HomepwnerBronze9" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C5ED9CB51C86BFFE00F56833 /* Debug */,
@@ -288,7 +301,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C5ED9CB71C86BFFE00F56833 /* Build configuration list for PBXNativeTarget "Homepwner" */ = {
+		C5ED9CB71C86BFFE00F56833 /* Build configuration list for PBXNativeTarget "HomepwnerBronze9" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C5ED9CB81C86BFFE00F56833 /* Debug */,

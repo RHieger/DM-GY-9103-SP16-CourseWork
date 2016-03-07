@@ -19,16 +19,7 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     
-    // FULL DISCLOSURE: The alterations made to the ItemsViewController
-    //                  class are based on an online tutorial to which
-    //                  I am greatly indebted. The URL of this tutorial
-    //                  is:
-    //
-    //  https://www.codebeaulieu.com/34/Creating-a-UITableViewController-with-sections-in-iOS-9
-    
     // PROPERTIES:
-    
-    var itemSections: [Section] = itemSectionsData().getSectionsFromData()
     
     var itemStore: ItemStore!   // Instantiate ItemStore object.
     
