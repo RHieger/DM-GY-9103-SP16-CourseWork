@@ -23,6 +23,21 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!   // Instantiate ItemStore object.
     
+    //IBACTIONS:
+    
+    @IBAction func addNewItem(sender: AnyObject)    {
+        
+        
+        
+    }   // end addNewItem(sender: AnyObject)
+    
+    
+    @IBAction func toggleEditingMode(sender: AnyObject) {
+        
+        
+        
+    }   // end toggleEditingMode(sender: AnyObject)
+    
     
     // OVERRIDE BUILT-IN METHODS:
     
