@@ -111,6 +111,10 @@ class ItemsViewController: UITableViewController {
         
         tableView.scrollIndicatorInsets = insets
         
+        // Set the height of table rows.
+        
+        tableView.rowHeight = 65
+        
     }   // end viewDidLoad()
     
     
@@ -140,8 +144,8 @@ class ItemsViewController: UITableViewController {
         // Get a reusable or new UITableViewCell.
         
         let cell =
-        tableView.dequeueReusableCellWithIdentifier("UITableViewCell",
-            forIndexPath: indexPath)
+        tableView.dequeueReusableCellWithIdentifier("ItemCell",
+            forIndexPath: indexPath) as! ItemCell
         
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
@@ -149,13 +153,11 @@ class ItemsViewController: UITableViewController {
                     
         let item = itemStore.allItems[indexPath.row]
                     
-        // Set the text content of the item name.
+        // Configure the cell with item
         
-        cell.textLabel?.text = item.name
-                    
-        // Set the text content of the item dollar value.
-                    
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        cell.nameLabel.text = item.name
+        cell.serialNumberLabel.text = item.serialNumber   // Serial Number
+        cell.valueLabel.text = "$\(item.valueInDollars)"  // Price
                     
         // Return cell to calling method.
                     
