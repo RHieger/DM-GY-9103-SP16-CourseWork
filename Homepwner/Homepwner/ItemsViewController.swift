@@ -180,19 +180,63 @@ class ItemsViewController: UITableViewController {
             
             let item = itemStore.allItems[indexPath.row]
             
-            // Remove the item from itemStore
+            // Configure .ActionSheet style alert to confirm
+            // that user wishes to delete the selected row
+            // from the table.
             
-            itemStore.removeItem(item)
-                
+            let title = "Delete \(item.name)"   // Alert title
+            
+            // Alert message:
+            
+            let message = "Are you sure you want to delete this item?"
+            
+            // Configure alert:
+            
+            let ac = UIAlertController(title: title,
+                message: message, preferredStyle: .ActionSheet)
+            
+            // Define cancellation action:
+            
+            let cancelAction = UIAlertAction(title: "Cancel",
+                style: .Cancel,
+                handler: nil)
+            
+            // Add cancelAction to Alert Controller.
+            
+            ac.addAction(cancelAction)
+            
+            // Define delete action:
+            
+            let deleteAction = UIAlertAction(title: "Delete",
+                style: .Destructive,
+                handler: {
+                    
+                    (action) -> Void in
+                    
+                    // Remove the item from itemStore
+                    
+                    self.itemStore.removeItem(item)
+                    
+                    // Also remove that row from table with an animation.
+                    
+                    tableView.deleteRowsAtIndexPaths([indexPath],
+                        withRowAnimation: .Automatic)
+                    
+            })  // end deleteAction
+            
+            // Add deleteAction to Alert Controller.
+            
+            ac.addAction(deleteAction)
+            
+            // Display modal alert:
+            
+            presentViewController(ac, animated: true, completion: nil)
+            
         }   // end if
-            
-        // Also remove that row from table with an animation.
-            
-        tableView.deleteRowsAtIndexPaths([indexPath],
-            withRowAnimation: .Automatic)
             
     }   // end (_:commitEditingStyle...:)
     
+
     // Override (_:moveRowAtIndexPath...toIndexPath:).
     
     override func tableView(tableView: UITableView,
