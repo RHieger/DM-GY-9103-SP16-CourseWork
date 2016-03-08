@@ -113,7 +113,11 @@ class ItemsViewController: UITableViewController {
         
         // Set the height of table rows.
         
-        tableView.rowHeight = 65
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // Now set an estimated height for the table rows.
+        
+        tableView.estimatedRowHeight = 65
         
     }   // end viewDidLoad()
     
