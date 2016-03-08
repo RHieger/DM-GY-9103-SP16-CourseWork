@@ -47,6 +47,7 @@ class ItemCell: UITableViewCell {
         
         valueLabel.font = bodyFont
         
+        
         // Provide a handle for Caption1 style.
         
         let caption1Font =
