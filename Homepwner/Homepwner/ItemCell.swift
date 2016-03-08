@@ -28,4 +28,34 @@ class ItemCell: UITableViewCell {
     @IBOutlet var serialNumberLabel: UILabel!       // Serial Number
     @IBOutlet var valueLabel: UILabel!              // Price of Item
     
+    
+    // METHODS:
+    
+    func updateLabels() {
+        
+        // This method responds to user request in settings
+        // for preferred text size.
+        
+        // Provide a handle for bodyFont style.
+        
+        let bodyFont =
+        UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        
+        // Set name and value labels with bodyFont styling.
+        
+        nameLabel.font = bodyFont
+        
+        valueLabel.font = bodyFont
+        
+        // Provide a handle for Caption1 style.
+        
+        let caption1Font =
+        UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
+        
+        // Set serial number label styling.
+        
+        serialNumberLabel.font = caption1Font
+        
+    }   // end updateLabels()
+    
 }   // end ItemCell: UITableViewCell

@@ -151,6 +151,11 @@ class ItemsViewController: UITableViewController {
         tableView.dequeueReusableCellWithIdentifier("ItemCell",
             forIndexPath: indexPath) as! ItemCell
         
+        // Update table cell view with user-specified
+        // accessibility options.
+        
+        cell.updateLabels()     // Remember cell is instance of ItemCell
+        
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear on the tableView.
