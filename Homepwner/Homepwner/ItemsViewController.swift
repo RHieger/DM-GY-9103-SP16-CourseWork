@@ -295,4 +295,34 @@ class ItemsViewController: UITableViewController {
             
     }   // end override (_:moveRowAtIndexPath...toIndexPath:)
     
+    
+    // Override prepareForSegue(_:sender:).
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+        
+    {
+        
+        // If triggered segue is ShowItem Segue...
+        
+        if segue.identifier == "ShowItem"   {
+            
+            // Figure out which row was tapped.
+            
+            if let row = tableView.indexPathForSelectedRow?.row {
+                
+                // Get item asscoiated with row and pass to Detail View.
+                
+                let item = itemStore.allItems[row]
+                
+                let detailViewController =
+                segue.destinationViewController as! DetailViewController
+                
+                detailViewController.item = item
+                
+            }   // end if
+            
+        }   // end if
+        
+    }   // end override func prepareForSegue(_:sender:)
+    
 }   //  end ItemsViewController

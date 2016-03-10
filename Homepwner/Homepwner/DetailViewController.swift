@@ -35,12 +35,12 @@ class DetailViewController: UIViewController {
     
     // PROPERTIES:
     
-    var item: Item!         // Instantiate Item object.
+    var item: Item!         // Instantiate Item object
     
 
     // Instantiate NSNumberFormatter object.
     
-    var numberFormatter: NSNumberFormatter = {
+    let numberFormatter: NSNumberFormatter = {
         
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .DecimalStyle
@@ -54,7 +54,7 @@ class DetailViewController: UIViewController {
     
     // Instantiate NSDateFormatter object.
     
-    var dateFormatter: NSDateFormatter = {
+    let dateFormatter: NSDateFormatter = {
         
        let formatter = NSDateFormatter()
        formatter.dateStyle = .MediumStyle
