@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="336" y="390"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="hY2-Uo-LMZ">
             <objects>
-                <viewController id="QAw-R5-xSs" sceneMemberID="viewController">
+                <viewController id="QAw-R5-xSs" customClass="DetailViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AW1-pP-m0j"/>
                         <viewControllerLayoutGuide type="bottom" id="oej-oa-BiE"/>
@@ -184,6 +184,12 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="jz9-Fw-G2G" id="iCB-V7-MAP"/>
+                        <outlet property="nameField" destination="n5P-ct-xQ3" id="M2W-B0-Cni"/>
+                        <outlet property="serialNumberField" destination="7IX-bv-NEJ" id="wAV-9A-1ox"/>
+                        <outlet property="valueField" destination="GsK-gU-lMw" id="wjh-Kh-7DK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnJ-pc-gHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

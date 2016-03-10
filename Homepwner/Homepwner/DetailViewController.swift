@@ -22,6 +22,14 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    // Place code here.
+    // IBOUTLETS:
+    
+    @IBOutlet var nameField: UITextField!
+    
+    @IBOutlet var serialNumberField: UITextField!
+    
+    @IBOutlet var valueField: UITextField!
+    
+    @IBOutlet var dateLabel: UILabel!
     
 }   // end DetailViewController
