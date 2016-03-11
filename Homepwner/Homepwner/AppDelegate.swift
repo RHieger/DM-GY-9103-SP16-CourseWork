@@ -22,11 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let itemStore = ItemStore()
         
-        // Reference ItemsViewController and set it as the
-        // root view controller:
+        // Reference navController (root view controller) and set
+        // itemsController as its top view:
+        
+        let navController =
+        window!.rootViewController as! UINavigationController
         
         let itemsController =
-        window!.rootViewController as! ItemsViewController
+        navController.topViewController as! ItemsViewController
         
         // Set the data store for itemsController:
         
