@@ -20,7 +20,14 @@ import UIKit
  **********************************************************
 */
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
+    
+    // NOTE: The UITextFieldDelegate Protocol is applied in order
+    //       to enable text field resignation of FirstResponder
+    //       status. In plain English, this means that the text
+    //       field is given the ability to control the keyboard,
+    //       e.g. dismissing the keyboard when Return key is tapped
+    //       or user taps anywhere on view outside of keyboard.
     
     // IBOUTLETS:
     
@@ -125,5 +132,23 @@ class DetailViewController: UIViewController {
         }   // end if-else
         
     }   // end viewWillDisappear(_:)
+    
+    
+    // METHODS:
+    
+    // textFieldShouldReturn(_:) Method (belongs to the
+    // UITextFieldDelegate protocol.
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        // Resign FirstResponder status on text field.
+        
+        textField.resignFirstResponder()
+        
+        // Return resignFirstResponder status as true.
+        
+        return true
+        
+    }   // end textFieldShouldReturn(_:)
     
 }   // end DetailViewController
