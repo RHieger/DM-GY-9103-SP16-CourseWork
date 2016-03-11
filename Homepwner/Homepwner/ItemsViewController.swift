@@ -325,4 +325,20 @@ class ItemsViewController: UITableViewController {
         
     }   // end override func prepareForSegue(_:sender:)
     
+    // Override viewWillAppear(_:).
+    
+    override func viewWillAppear(animated: Bool)    {
+        
+        // Call super implementation of viewWillAppear(_:).
+        
+        super.viewWillAppear(animated)
+        
+        // When user taps Back (<) button on navigation view,
+        // update the values in the table cell of the
+        // itemsViewController.
+        
+        tableView.reloadData()          // Refreshes view.
+        
+    }   // end override func viewWillAppear(_:)
+    
 }   //  end ItemsViewController

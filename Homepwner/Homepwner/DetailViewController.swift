@@ -92,4 +92,38 @@ class DetailViewController: UIViewController {
         
     }   // end override func viewWillAppear(animated: Bool)
     
+    
+    // Override viewWillDisappear(_:).
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        // Call super implementation of viewWillDisappear(_:).
+        
+        super.viewWillDisappear(animated)
+        
+        // Update item values.
+        
+        // If nameField.text is nil, apply default value:
+        
+        item.name = nameField.text ?? ""
+        
+        // Update serial number if changed.
+        
+        item.serialNumber = serialNumberField.text
+        
+        // Update item price if it has changed.
+        
+        if let valueText = valueField.text,
+            value = numberFormatter.numberFromString(valueText) {
+                
+                item.valueInDollars = value.integerValue
+                
+        }   else    {
+            
+            item.valueInDollars = 0
+            
+        }   // end if-else
+        
+    }   // end viewWillDisappear(_:)
+    
 }   // end DetailViewController
