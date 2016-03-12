@@ -51,7 +51,19 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     // PROPERTIES:
     
-    var item: Item!         // Instantiate Item object
+    // Instantiate Item object.
+    
+    var item: Item! {
+        
+        // Property Observer to Update title of navigationItem:
+        
+        didSet  {
+            
+            navigationItem.title = item.name
+            
+        }   // end didSet
+        
+    }   // end item
     
 
     // Instantiate NSNumberFormatter object.
