@@ -93,7 +93,13 @@
                             <outlet property="delegate" destination="yRr-xw-s5u" id="XFU-83-aKS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Homepwner" id="pPx-nG-Pr3"/>
+                    <navigationItem key="navigationItem" title="Homepwner" id="pPx-nG-Pr3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dc0-CG-ZTh">
+                            <connections>
+                                <action selector="addNewItem:" destination="yRr-xw-s5u" id="1nY-iU-hOx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEO-sa-vAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
