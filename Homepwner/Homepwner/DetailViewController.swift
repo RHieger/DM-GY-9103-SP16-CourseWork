@@ -40,6 +40,15 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var dateLabel: UILabel!
     
     
+    // IBACTIONS:
+    
+    
+    @IBAction func backgroundTapped(sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+        
+    }   // end func backgroundTapped(sender: UITapGestureRecognizer)
+    
     // PROPERTIES:
     
     var item: Item!         // Instantiate Item object
