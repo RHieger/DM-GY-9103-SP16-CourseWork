@@ -122,6 +122,21 @@ class ItemsViewController: UITableViewController {
     }   // end viewDidLoad()
     
     
+    // Override init(_:coder:).
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        // Call the super implementation of init?(coder aDecoder: NSCoder).
+        
+        super.init(coder: aDecoder)
+        
+        // Add edit button to left of navigation bar.
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
+        
+    }   // end func init?(coder aDecoder: NSCoder)
+    
+    
     // METHODS:
     
     // Override tableView(tableView: UITableView,
