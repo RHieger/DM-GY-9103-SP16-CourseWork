@@ -47,39 +47,6 @@ class ItemsViewController: UITableViewController {
     }   // end addNewItem(sender: AnyObject)
     
     
-    @IBAction func toggleEditingMode(sender: AnyObject) {
-        
-        // If you are currently in editing mode...
-        
-        if editing  {
-            
-            // Change text of button to inform user of state.
-            
-            // NOTE: This is the state of the button before it is tapped.
-            
-            sender.setTitle("Edit", forState: .Normal)
-            
-            // Turn off editing mode.
-            
-             setEditing(false, animated: true)
-            
-        }   else    {
-            
-            // Change text of button to inform user of state.
-            
-            // NOTE: This is the state of the button after it is tapped.
-            
-            sender.setTitle("Done", forState: .Normal)
-            
-            // Turn on editing mode.
-            
-            setEditing(true, animated: true)
-            
-        }   // end if-else
-        
-    }   // end toggleEditingMode(sender: AnyObject)
-    
-    
     // OVERRIDE BUILT-IN METHODS:
     
     // Override viewDidLoad().
@@ -89,27 +56,6 @@ class ItemsViewController: UITableViewController {
         // Call super impementation of viewDidLoad().
         
         super.viewDidLoad()
-        
-        // Get the height of the status bar.
-        
-        let statusBarHeight =
-        UIApplication.sharedApplication().statusBarFrame.height
-        
-        // Set the insets for the UITableView using statusBarHeight
-        // for the top inset and 0 for all other insets.
-        
-        let insets = UIEdgeInsets(top: statusBarHeight,
-                                 left: 0,
-                               bottom: 0,
-                                right: 0)
-        
-        // Set tableView content insets.
-        
-        tableView.contentInset = insets
-        
-        // Set tableView scroll indicator insets.
-        
-        tableView.scrollIndicatorInsets = insets
         
         // Set the height of table rows.
         
