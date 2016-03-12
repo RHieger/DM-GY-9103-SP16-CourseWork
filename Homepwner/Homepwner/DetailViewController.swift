@@ -42,12 +42,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     // IBACTIONS:
     
-    
     @IBAction func backgroundTapped(sender: UITapGestureRecognizer) {
         
         view.endEditing(true)
         
     }   // end func backgroundTapped(sender: UITapGestureRecognizer)
+    
     
     // PROPERTIES:
     
@@ -116,6 +116,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         // Call super implementation of viewWillDisappear(_:).
         
         super.viewWillDisappear(animated)
+        
+        // If back button is tapped, clear firstResponder.
+        
+        view.endEditing(true)
         
         // Update item values.
         
