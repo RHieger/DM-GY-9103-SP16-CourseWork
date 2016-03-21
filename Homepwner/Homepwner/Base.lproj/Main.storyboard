@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-bO-Khr">
-                                <rect key="frame" x="20" y="72" width="374" height="656"/>
+                                <rect key="frame" x="20" y="72" width="374" height="612"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vPM-Ly-bWe">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -149,14 +149,14 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz9-Fw-G2G">
-                                        <rect key="frame" x="0.0" y="114" width="374" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz9-Fw-G2G">
+                                        <rect key="frame" x="0.0" y="114" width="374" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="wbY-G1-ino">
-                                        <rect key="frame" x="0.0" y="142" width="374" height="513.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wbY-G1-ino">
+                                        <rect key="frame" x="0.0" y="122" width="374" height="490"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -164,14 +164,26 @@
                                     <constraint firstItem="WRo-AE-iNe" firstAttribute="leading" secondItem="Cww-6m-WbN" secondAttribute="leading" id="bnw-Br-LKn"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="In8-gT-quc">
+                                <rect key="frame" x="20" y="692" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xpo-Ay-k7k"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="SfL-8l-Oym"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="aB5-bO-Khr" firstAttribute="top" secondItem="AW1-pP-m0j" secondAttribute="bottom" constant="8" id="17g-mX-9s5"/>
                             <constraint firstItem="aB5-bO-Khr" firstAttribute="leading" secondItem="iPK-CY-UUv" secondAttribute="leadingMargin" id="6HW-wF-l9D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="In8-gT-quc" secondAttribute="trailing" id="Fpq-YB-DKg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aB5-bO-Khr" secondAttribute="trailing" id="JwW-Um-FML"/>
-                            <constraint firstItem="oej-oa-BiE" firstAttribute="top" secondItem="aB5-bO-Khr" secondAttribute="bottom" constant="8" id="tXg-3o-uSA"/>
+                            <constraint firstItem="In8-gT-quc" firstAttribute="leading" secondItem="iPK-CY-UUv" secondAttribute="leadingMargin" id="KsA-bB-mWt"/>
+                            <constraint firstItem="In8-gT-quc" firstAttribute="top" secondItem="aB5-bO-Khr" secondAttribute="bottom" constant="8" id="MDk-gC-X85"/>
+                            <constraint firstItem="oej-oa-BiE" firstAttribute="top" secondItem="In8-gT-quc" secondAttribute="bottom" id="u9O-nu-w4m"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="cYA-Hp-82w" appends="YES" id="NLo-DP-EaO"/>
