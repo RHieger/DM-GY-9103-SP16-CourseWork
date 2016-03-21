@@ -20,7 +20,9 @@ import UIKit
  **********************************************************
 */
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate,
+                            UINavigationControllerDelegate,
+                            UIImagePickerControllerDelegate {
     
     // NOTE: The UITextFieldDelegate Protocol is applied in order
     //       to enable text field resignation of FirstResponder
@@ -53,9 +55,29 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
  
     @IBAction func takePicture(sender: UIBarButtonItem) {
         
+        // Instantiate UIImagePickerController object.
         
+        let imagePicker = UIImagePickerController()
         
-    }
+        // If the device has a camera, take a picture; otherwise
+        // just pick from a photo library.
+        
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            
+            // Set the source type to .Camera.
+            
+            imagePicker.sourceType = .Camera
+            
+        }   else    {
+            
+            // If device has no camera, choose photo from
+            // photo library.
+            
+            imagePicker.sourceType = .PhotoLibrary
+            
+        }   // end if-else
+        
+    }   // end takePicture(sender: UIBarButtonItem)
     
     // PROPERTIES:
     
