@@ -180,6 +180,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="dateLabel" destination="jz9-Fw-G2G" id="iCB-V7-MAP"/>
+                        <outlet property="imageView" destination="wbY-G1-ino" id="WVh-A0-Ufl"/>
                         <outlet property="nameField" destination="n5P-ct-xQ3" id="M2W-B0-Cni"/>
                         <outlet property="serialNumberField" destination="7IX-bv-NEJ" id="wAV-9A-1ox"/>
                         <outlet property="valueField" destination="GsK-gU-lMw" id="wjh-Kh-7DK"/>

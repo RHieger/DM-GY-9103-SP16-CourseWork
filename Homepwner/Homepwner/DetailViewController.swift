@@ -40,6 +40,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var dateLabel: UILabel!
     
     
+    @IBOutlet var imageView: UIImageView!
+    
     // IBACTIONS:
     
     @IBAction func backgroundTapped(sender: UITapGestureRecognizer) {
