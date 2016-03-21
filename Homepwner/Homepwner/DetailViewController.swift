@@ -77,6 +77,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
             
         }   // end if-else
         
+        // Set this instance instance of UIImagePickerController()
+        // to be the delegate.
+        
+        imagePicker.delegate = self
+        
     }   // end takePicture(sender: UIBarButtonItem)
     
     // PROPERTIES:
