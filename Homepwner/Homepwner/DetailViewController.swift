@@ -215,4 +215,24 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         
     }   // end textFieldShouldReturn(_:)
     
+    // Implement (_:didFinishPickingMediaWithInfo:)
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        // Get picked image from info dictionary.
+        
+        let image =
+        info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Put that image on the screen in the imageView.
+        
+        imageView.image = image
+        
+        // Take imagePicker off the screen--
+        // you must call this dismiss method:
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }   // end (_:didFinishPickingMediaWithInfo:)
+    
 }   // end DetailViewController
