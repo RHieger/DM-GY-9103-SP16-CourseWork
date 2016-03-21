@@ -10,7 +10,7 @@ import UIKit
 
 /**********************************************************
  *                                                        *
- * ImageStore() Class                                     *
+ * ImageStore Class                                       *
  *                                                        *
  * The ImageStore() class stores images taken by the      *
  * user of Homepwner, allows those to be read into        *
@@ -26,6 +26,10 @@ import UIKit
 
 class ImageStore {
     
-    // Place code here.
+    // PROPERTIES:
     
-}
+    // Instantiate a cache object for photos.
+    
+    let cache = NSCache()
+    
+}   // end ImageStore
