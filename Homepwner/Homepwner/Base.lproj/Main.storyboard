@@ -170,7 +170,11 @@
                                     <constraint firstAttribute="height" constant="44" id="xpo-Ay-k7k"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="camera" id="SfL-8l-Oym"/>
+                                    <barButtonItem systemItem="camera" id="SfL-8l-Oym">
+                                        <connections>
+                                            <action selector="takePicture:" destination="QAw-R5-xSs" id="rS2-g3-bQV"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

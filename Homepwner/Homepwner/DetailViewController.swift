@@ -42,14 +42,20 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var imageView: UIImageView!
     
-    // IBACTIONS:
+    
+     // IBACTIONS:
     
     @IBAction func backgroundTapped(sender: UITapGestureRecognizer) {
         
         view.endEditing(true)
         
     }   // end func backgroundTapped(sender: UITapGestureRecognizer)
-    
+ 
+    @IBAction func takePicture(sender: UIBarButtonItem) {
+        
+        
+        
+    }
     
     // PROPERTIES:
     
