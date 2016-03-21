@@ -82,6 +82,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         
         imagePicker.delegate = self
         
+        // Place imagePicker in stack view modally.
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
     }   // end takePicture(sender: UIBarButtonItem)
     
     // PROPERTIES:
