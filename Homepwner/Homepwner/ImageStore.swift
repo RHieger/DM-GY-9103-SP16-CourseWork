@@ -32,4 +32,32 @@ class ImageStore {
     
     let cache = NSCache()
     
+    // METHODS:
+    
+    // Setter method to set image:
+    
+    func setImage(image: UIImage, forKey key: String) {
+    
+        cache.setObject(image, forKey: key)
+        
+    }   // end setImage(image: UIImage, forKey key: String)
+    
+    // Getter method to retrieve image:
+    
+    func imageForKey(key: String) -> UIImage? {
+        
+        // Return a UIImage object, if present.
+        
+        return cache.objectForKey(key) as? UIImage
+        
+    }   // end imageForKey(key: String) -> UIImage?
+    
+    // Delete image from ImageStore:
+    
+    func deleteImageForKey(key: String) {
+        
+        cache.removeObjectForKey(key)
+        
+    }   // end deleteImageForKey(key: String)
+    
 }   // end ImageStore
