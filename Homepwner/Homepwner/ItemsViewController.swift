@@ -220,9 +220,13 @@ class ItemsViewController: UITableViewController {
                     
                     (action) -> Void in
                     
-                    // Remove the item from itemStore
+                    // Remove the item from itemStore.
                     
                     self.itemStore.removeItem(item)
+                    
+                    // Remove item's image from imageStore.
+                    
+                    self.imageStore.deleteImageForKey(item.itemKey)
                     
                     // Also remove that row from table with an animation.
                     
