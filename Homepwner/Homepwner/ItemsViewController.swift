@@ -21,7 +21,8 @@ class ItemsViewController: UITableViewController {
     
     // PROPERTIES:
     
-    var itemStore: ItemStore!   // Instantiate ItemStore object.
+    var itemStore: ItemStore!       // Instantiate ItemStore object.
+    var imageStore: ImageStore!     // Instnatiate ImageStore object.
     
     //IBACTIONS:
     
@@ -279,6 +280,10 @@ class ItemsViewController: UITableViewController {
                 segue.destinationViewController as! DetailViewController
                 
                 detailViewController.item = item
+                
+                // Set the imageStore object.
+                
+                detailViewController.imageStore = imageStore
                 
             }   // end if
             

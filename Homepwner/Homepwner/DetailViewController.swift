@@ -104,7 +104,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         
     }   // end item
     
-
+    // Instantiate an ImageStore object:
+    
+    var imageStore: ImageStore!
+    
     // Instantiate NSNumberFormatter object.
     
     let numberFormatter: NSNumberFormatter = {

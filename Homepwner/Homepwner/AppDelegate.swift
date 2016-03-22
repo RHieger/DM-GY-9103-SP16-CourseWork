@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let itemStore = ItemStore()
         
+        // Instantiate ImageStore object at application launch:
+        
+        let imageStore = ImageStore()
+        
         // Reference navController (root view controller) and set
         // itemsController as its top view:
         
@@ -34,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set the data store for itemsController:
         
         itemsController.itemStore = itemStore
+        
+        // Set imageStore as the ImageStore on application launch:
+        
+        itemsController.imageStore = imageStore
         
         return true
     }
