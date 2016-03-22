@@ -160,6 +160,17 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         dateLabel.text =
         dateFormatter.stringFromDate(item.dateCreated)
         
+        // Get the item key.
+        
+        let key = item.itemKey
+        
+        // If there is an associated image with the item,
+        // display it on the image view.
+        
+        let imageToDisplay = imageStore.imageForKey(key)
+        
+        imageView.image = imageToDisplay
+        
     }   // end override func viewWillAppear(animated: Bool)
     
     
@@ -226,6 +237,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         
         let image =
         info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Get the image from imageStore.
+        
+        imageStore.setImage(image, forKey: item.itemKey)
         
         // Put that image on the screen in the imageView.
         
