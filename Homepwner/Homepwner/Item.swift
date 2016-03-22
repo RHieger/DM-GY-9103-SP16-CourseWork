@@ -29,6 +29,7 @@ class Item: NSObject {
     var valueInDollars: Int         // Dollar Value of Item
       var serialNumber: String?     // Optional Serial Number
        let dateCreated: NSDate      // Time Stamp of Item Creation
+           let itemKey: String      // Key for photo in NSCache()
     
     
     // DESIGNATED INITIALIZER:
@@ -39,6 +40,7 @@ class Item: NSObject {
         self.valueInDollars = valueInDollars
         self.serialNumber = serialNumber
         self.dateCreated = NSDate()
+        self.itemKey = NSUUID().UUIDString
         
         // Call super implementation of NSObject.init:
         
