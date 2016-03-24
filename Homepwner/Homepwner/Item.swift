@@ -17,7 +17,7 @@ import UIKit
  **********************************************************
 */
 
-class Item: NSObject {
+class Item: NSObject, NSCoding {
     
     // NOTE: This class inherits from the Swift (Objective-C)
     //       root class--NSObject.
@@ -114,5 +114,72 @@ class Item: NSObject {
         }   // end if-else
         
     }   // end convenience init()
+    
+    // MARK: - NSCoding Protocol
+    
+    // Implement encodeWithCoder(_:).
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        
+        // Encode properties of Item.
+        
+        // Item Name:
+        
+        aCoder.encodeObject(name, forKey: "name")
+        
+        // Time Stamp:
+        
+        aCoder.encodeObject(dateCreated, forKey: "dateCreated")
+        
+        // Item Key:
+        
+        aCoder.encodeObject(itemKey, forKey: "itemKey")
+        
+        // Serial Number:
+        
+        aCoder.encodeObject(serialNumber, forKey: "serialNumber")
+        
+        // Item Price:
+        
+        aCoder.encodeInteger(valueInDollars, forKey: "valueInDollars")
+        
+        // NOTE: aCoder.encodeInteger is used here because the Integer
+        // type is not an object but a value type.
+        
+    }   // end encodeWithCoder(aCoder: NSCoder)
+    
+    
+    // Impement init(coder:).
+    
+    required init(coder aDecoder: NSCoder)  {
+        
+        // Get item name:
+        
+        name = aDecoder.decodeObjectForKey("name") as! String
+        
+        // Get item time stamp:
+        
+        dateCreated =
+            aDecoder.decodeObjectForKey("dateCreated") as! NSDate
+        
+        // Get item key:
+        
+        itemKey = aDecoder.decodeObjectForKey("itemKey") as! String
+        
+        // Get item serial number:
+        
+        serialNumber =
+            aDecoder.decodeObjectForKey("serialNumber") as! String?
+        
+        // Get item price:
+        
+        valueInDollars =
+            aDecoder.decodeIntegerForKey("valueInDollars")
+        
+        // Call super implementation of init().
+        
+        super.init()
+        
+    }   // end required init(coder aDecoder: NSCoder)
     
 }   // end class Item: NSObject
