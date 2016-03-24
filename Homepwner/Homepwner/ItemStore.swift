@@ -18,12 +18,12 @@ import UIKit
 
 class ItemStore {
     
-    // PROPERTIES:
+    // MARK: - Properties
     
      var allItems = [Item]()        // Array of Item instances
     
     
-    // METHODS:
+    // MARK: - Methods
     
     func createItem() -> Item   {
         
@@ -78,6 +78,5 @@ class ItemStore {
         allItems.insert(movedItem, atIndex: toIndex)
         
     }   // end moveItemAtIndex(fromIndex: Int, toIndex: Int)
-    
     
 }   // end ItemStore

@@ -22,14 +22,14 @@ import UIKit
 
 class ItemCell: UITableViewCell {
     
-    // IBOUTLETS:
+    // MARK: - @IBOutlets
     
     @IBOutlet var nameLabel: UILabel!               // Name of Item
     @IBOutlet var serialNumberLabel: UILabel!       // Serial Number
     @IBOutlet var valueLabel: UILabel!              // Price of Item
     
     
-    // METHODS:
+    // MARK: - Methods
     
     func updateLabels() {
         

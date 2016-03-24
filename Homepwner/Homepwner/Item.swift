@@ -23,7 +23,7 @@ class Item: NSObject {
     //       root class--NSObject.
     
     
-    // PROPERTIES:
+    // MARK: - Properties
     
               var name: String      // Name of Item
     var valueInDollars: Int         // Dollar Value of Item
@@ -32,7 +32,7 @@ class Item: NSObject {
            let itemKey: String      // Key for photo in NSCache()
     
     
-    // DESIGNATED INITIALIZER:
+    // MARK: - Designated Initializer
     
     init(name: String, serialNumber: String?, valueInDollars: Int) {
         
@@ -49,7 +49,7 @@ class Item: NSObject {
     }   // end init() -- designated initializer
     
     
-    // CONVENIENCE INITIALIZER:
+    // MARK: - Convenience Initializer
     
     convenience init(random: Bool = false) {
         

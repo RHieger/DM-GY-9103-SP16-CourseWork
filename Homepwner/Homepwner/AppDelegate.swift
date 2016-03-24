@@ -9,10 +9,14 @@
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: - Main Interface Window
+    
     var window: UIWindow?
 
+    // MARK: - Application Entry Point
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         

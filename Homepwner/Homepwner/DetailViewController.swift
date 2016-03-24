@@ -31,7 +31,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
     //       e.g. dismissing the keyboard when Return key is tapped
     //       or user taps anywhere on view outside of keyboard.
     
-    // IBOUTLETS:
+    // MARK: - @IBOutlets
     
     @IBOutlet var nameField: UITextField!
     
@@ -45,7 +45,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
     @IBOutlet var imageView: UIImageView!
     
     
-     // IBACTIONS:
+     // MARK: - @IBActions
     
     @IBAction func backgroundTapped(sender: UITapGestureRecognizer) {
         
@@ -88,7 +88,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         
     }   // end takePicture(sender: UIBarButtonItem)
     
-    // PROPERTIES:
+    // MARK: - Properties
     
     // Instantiate Item object.
     
@@ -135,7 +135,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
     }()   // end dateFormatter
     
     
-    // OVERRIDE BUILT-IN METHODS:
+    // MARK: - Override of Built-In Methods
     
     // Override viewWillAppear(_:animated: Bool).
     
@@ -212,7 +212,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
     }   // end viewWillDisappear(_:)
     
     
-    // METHODS:
+    // MARK: - Methods
     
     // textFieldShouldReturn(_:) Method (belongs to the
     // UITextFieldDelegate protocol.

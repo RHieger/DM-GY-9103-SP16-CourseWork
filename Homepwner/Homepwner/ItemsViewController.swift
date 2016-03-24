@@ -19,12 +19,12 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     
-    // PROPERTIES:
+    // MARK: - Properties
     
     var itemStore: ItemStore!       // Instantiate ItemStore object.
     var imageStore: ImageStore!     // Instnatiate ImageStore object.
     
-    //IBACTIONS:
+    // MARK: - @IBActions
     
     @IBAction func addNewItem(sender: AnyObject)    {
         
@@ -48,7 +48,7 @@ class ItemsViewController: UITableViewController {
     }   // end addNewItem(sender: AnyObject)
     
     
-    // OVERRIDE BUILT-IN METHODS:
+    // MARK: - Override Built-In Methods
     
     // Override viewDidLoad().
     
@@ -83,8 +83,6 @@ class ItemsViewController: UITableViewController {
         
     }   // end func init?(coder aDecoder: NSCoder)
     
-    
-    // METHODS:
     
     // Override tableView(tableView: UITableView,
     //                    numberOfRowsInSection section: Int) -> Int

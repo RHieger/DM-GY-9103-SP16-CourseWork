@@ -26,13 +26,13 @@ import UIKit
 
 class ImageStore {
     
-    // PROPERTIES:
+    // MARK: - Properties
     
     // Instantiate a cache object for photos.
     
     let cache = NSCache()
     
-    // METHODS:
+    // MARK: - Methods
     
     // Setter method to set image:
     
