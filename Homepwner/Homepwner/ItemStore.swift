@@ -93,4 +93,19 @@ class ItemStore {
         
     }   // end moveItemAtIndex(fromIndex: Int, toIndex: Int)
     
+    // Save changes to persistent archive file.
+    
+    func saveChanges() -> Bool {
+        
+        // Print debug information to console.
+        
+        print("Saving items to \(itemArchiveURL.path).")
+        
+        // Now actually save the objects to file.
+        
+        return NSKeyedArchiver.archiveRootObject(allItems,
+                                            toFile: itemArchiveURL.path!)
+        
+    }   // end saveChanges()
+    
 }   // end ItemStore
