@@ -22,6 +22,20 @@ class ItemStore {
     
      var allItems = [Item]()        // Array of Item instances
     
+    // Instantiate NSURL object for file to contain
+    // persisted data in Homepwner.
+    
+    let itemArchiveURL: NSURL = {
+        
+        let documentsDirectories =
+        NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,
+                                                inDomains: .UserDomainMask)
+        
+        let documentDirectory = documentsDirectories.first!
+        
+        return documentDirectory.URLByAppendingPathComponent("items.archive")
+        
+    }() // end itemArchiveURL
     
     // MARK: - Methods
     
