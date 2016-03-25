@@ -46,14 +46,24 @@ class ImageStore {
         
         // Turn image into JPG data.
         
+//        if let data =
+//            UIImageJPEGRepresentation(image, 0.5)   {
+//            
+//            // Write JPGEG image to full URL.
+//            
+//            data.writeToURL(imageURL, atomically: true)
+//            
+//        }   // if let data...
+        
+        // Bronze Challenge Revision of above if statement.
+        // Save the image as PNG rather than JPG.
+        
         if let data =
-            UIImageJPEGRepresentation(image, 0.5)   {
-            
-            // Write JPGEG image to full URL.
+            UIImagePNGRepresentation(image)    {
             
             data.writeToURL(imageURL, atomically: true)
             
-        }   // if let data...
+        }   // end if
         
     }   // end setImage(image: UIImage, forKey key: String)
     
