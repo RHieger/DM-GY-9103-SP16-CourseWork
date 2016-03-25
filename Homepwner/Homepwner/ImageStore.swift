@@ -61,9 +61,31 @@ class ImageStore {
     
     func imageForKey(key: String) -> UIImage? {
         
-        // Return a UIImage object, if present.
+        // If image exists, load into view.
         
-        return cache.objectForKey(key) as? UIImage
+        if let existingImage =
+            cache.objectForKey(key) as? UIImage {
+            
+            return existingImage
+            
+        }   // end if
+        
+        // Get the URL for the image.
+        
+        let imageURL = imageForURLKey(key)
+        
+        guard let imageFromDisk =
+            UIImage(contentsOfFile: imageURL.path!) else  {
+                
+                return nil
+                
+        }   // end guard let imageFromDisk...
+        
+        // Set the object from cache.
+        
+        cache.setObject(imageFromDisk, forKey: key)
+        
+        return imageFromDisk
         
     }   // end imageForKey(key: String) -> UIImage?
     
@@ -90,6 +112,24 @@ class ImageStore {
     func deleteImageForKey(key: String) {
         
         cache.removeObjectForKey(key)
+        
+        // Get imageURL.
+        
+        let imageURL = imageForURLKey(key)
+        
+        // Now delete image from file system.
+        
+        // NOTE: This do-catch contains an explicitly named error
+        
+        do  {
+            
+            try NSFileManager.defaultManager().removeItemAtURL(imageURL)
+            
+        }   catch let deleteError   {
+            
+            print("Error removing the image from disk: \(deleteError)")
+            
+        }   // end do-catch
         
     }   // end deleteImageForKey(key: String)
     
