@@ -52,6 +52,24 @@ class ImageStore {
         
     }   // end imageForKey(key: String) -> UIImage?
     
+    // Save photos to file system.
+    
+    // NOTE: This implementation uses the NSData class.
+    
+    func imageForURLKey(key: String) -> NSURL   {
+        
+        // Create NSURL for image file.
+        
+        let documentDirectories =
+        NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,
+                                            inDomains: .UserDomainMask)
+        
+        let documentDirectory = documentDirectories.first!
+        
+        return documentDirectory.URLByAppendingPathComponent(key)
+        
+    }   // end imageForURLKey(key: String) -> NSURL
+    
     // Delete image from ImageStore:
     
     func deleteImageForKey(key: String) {
