@@ -40,6 +40,21 @@ class ImageStore {
     
         cache.setObject(image, forKey: key)
         
+        // Create full URL for image.
+        
+        let imageURL = imageForURLKey(key)
+        
+        // Turn image into JPG data.
+        
+        if let data =
+            UIImageJPEGRepresentation(image, 0.5)   {
+            
+            // Write JPGEG image to full URL.
+            
+            data.writeToURL(imageURL, atomically: true)
+            
+        }   // if let data...
+        
     }   // end setImage(image: UIImage, forKey key: String)
     
     // Getter method to retrieve image:
