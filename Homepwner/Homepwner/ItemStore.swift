@@ -37,6 +37,23 @@ class ItemStore {
         
     }() // end itemArchiveURL
     
+    
+    // MARK: -  Built-In Method Overrides
+    
+    init()  {
+        
+        // Load persisted Item objects at application launch.
+        
+        if let archivedItems =
+        NSKeyedUnarchiver.unarchiveObjectWithFile(itemArchiveURL.path!)
+            as? [Item]  {
+            
+            allItems += archivedItems
+            
+        }   // end [Item]
+        
+    }   // end init()
+    
     // MARK: - Methods
     
     func createItem() -> Item   {
