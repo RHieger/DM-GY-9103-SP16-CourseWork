@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // Log method name to console.
+        
+        print(#function)
+        
         // Override point for customization after application launch.
         
         // Instantiate ImageStore object at application launch:
@@ -47,18 +51,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         itemsController.imageStore = imageStore
         
         return true
-    }
+        
+    }   // end application(_:didFinishLaunchingWithOptions:)
+    
 
     func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
+        
+        // Log method name to console.
+        
+        print(#function)
+    
+    }   // end applicationWillResignActive(application: UIApplication)
+    
 
     func applicationDidEnterBackground(application: UIApplication) {
         
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        // Log method name to console.
         
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        print(#function)
         
         // When user touches Home buttton on phone, call
         // ItemStore.saveChanges().
@@ -80,19 +90,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }   // end if-else
         
     }   // end applicationDidEnterBackground(application: UIApplication)
+    
 
     func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
+
+        // Log method name to console.
+        
+        print(#function)
+
+    }   // end applicationWillEnterForeground(application: UIApplication)
+    
 
     func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
+        
+        // Log method name to console.
+        
+        print(#function)
+        
+    }   // end applicationDidBecomeActive(application: UIApplication)
+    
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
+        
+        // Log method name to console.
+        
+        print(#function)
+        
+    }   // end applicationWillTerminate(application: UIApplication)
 
-
-}
-
+}   // end AppDelegate: UIResponder, UIApplicationDelegate
