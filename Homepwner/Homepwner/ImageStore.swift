@@ -49,7 +49,7 @@ class ImageStore {
 //        if let data =
 //            UIImageJPEGRepresentation(image, 0.5)   {
 //            
-//            // Write JPGEG image to full URL.
+//            // Write JPEG image to full URL.
 //            
 //            data.writeToURL(imageURL, atomically: true)
 //            

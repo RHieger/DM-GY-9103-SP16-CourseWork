@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(#function)
         
+        // Log application bundle path to console.
+        
+        print(NSBundle.mainBundle().bundlePath)
+        
         // Override point for customization after application launch.
         
         // Instantiate ImageStore object at application launch:
