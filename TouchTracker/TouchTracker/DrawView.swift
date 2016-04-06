@@ -78,4 +78,62 @@ class DrawView: UIView  {
         
     }   // end override func drawRect(rect: CGRect)
     
+    override func touchesBegan(touches: Set<UITouch>,
+                       withEvent event: UIEvent?)       {
+        
+        // Set the first line to use.
+        
+        let touch = touches.first!
+        
+        // Get location of the touch in the view's
+        // coordinate system.
+        
+        let location = touch.locationInView(self)
+        
+        // Specify the current line for drawing.
+        
+        currentLine = Line(begin: location, end: location)
+        
+        // Tell view to display the line.
+        
+        setNeedsDisplay()
+        
+    }   // end touchesBegan(_:withEvent)
+    
+    override func touchesMoved(touches: Set<UITouch>,
+                       withEvent event: UIEvent?)       {
+        
+        // Update the end of the currentLine.
+        
+        let touch = touches.first!
+        
+        let location = touch.locationInView(self)
+        
+        currentLine?.end = location
+        
+        setNeedsDisplay()
+        
+    }   // end touchesMoved(_:withEvent)
+    
+    override func touchesEnded(touches: Set<UITouch>,
+                       withEvent event: UIEvent?)       {
+        
+        if var line = currentLine   {
+            
+            let touch = touches.first!
+            
+            let location = touch.locationInView(self)
+            
+            line.end = location
+            
+            finishedLines.append(line)
+            
+        }   // end if
+        
+        currentLine = nil
+        
+        setNeedsDisplay()
+        
+    }   // end touchesEnded(_:withEvent)
+    
 }   // end class DrawView: UIView
