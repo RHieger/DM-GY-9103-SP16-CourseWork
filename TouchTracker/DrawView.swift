@@ -10,78 +10,86 @@ import UIKit
 
 // DrawView Class:
 //
-// The DrawView class defines a line that might be in the process
-// of being drawn. This takes the form of an optional of type Line.
-// An additional property is defined as an empty array of type Line
-// that holds any lines that have already been drawn.
+// The DrawView class is a UIView object that the defines
+// the view(s) controlled by ViewController.swift.
 
 class DrawView: UIView  {
     
     // MARK: - Properties
     
-    var currentLine: Line?          // Current line being drawn?
+    var currentLine: Line?          // Optional to hold current line
     
-    var finishedLines = [Line]()    // Array of type Line
+    var finishedLines = [Line]()    // Array of Line objects
     
     
     // MARK: - Methods
     
-    func strokeLine(line: Line)   {
+    func strokeLine(line: Line) {
         
-        // Define the line's path.
+        // strokeLine creates the outline of each line.
         
-        let path = UIBezierPath()   // Instantiate UIBezierPath object.
+        let path = UIBezierPath()
         
-        // Set the styling for the line:
+        // Set line styling.
         
         path.lineWidth = 10
         path.lineCapStyle = CGLineCap.Round
         
-        // Set the beginning and ending points of the line:
+        // Set path (beginning and ending points for line).
         
         path.moveToPoint(line.begin)
-        path.moveToPoint(line.end)
+        path.addLineToPoint(line.end)
         
-        // Draw the line:
+        // Create the path.
         
         path.stroke()
         
     }   // end strokeLine(line: Line)
     
     
-    // MARK: - Built-In Method Overrides
+    // MARK: - Built-In Function Overrides
     
     override func drawRect(rect: CGRect) {
+        
+        // This method sets the color for the line stroke
+        // and draws the line by calling strokeLine(line: Line).
         
         // Draw finished lines in black.
         
         UIColor.blackColor().setStroke()
         
-        // Loop through and draw finished lines:
-        
-        for line in finishedLines   {
+        for line in finishedLines {
+            
+            // Call strokeLine(line: Line).
             
             strokeLine(line)
             
         }   // end for line in finishedLines
         
-        // Check if line is currently being drawn. If so, draw
-        // it in red.
+        // Now handle lines currently being drawn.
         
         if let line = currentLine   {
             
+            // If there is a line currently being drawn,
+            // draw it in red.
+            
             UIColor.redColor().setStroke()
+            
+            // Call strokeLine(line: Line).
             
             strokeLine(line)
             
-        }   // end if
+        }   // end if let line = currentLine
         
     }   // end override func drawRect(rect: CGRect)
     
+    // Now we have to transform touches into lines rendered
+    // on the screen. To do this, we override three methods:
+    // touchesBegan(_:withEvent), touchesMoved(_:withEvent)
+    // and touchesEnded(_:withEvent).
+    
     override func touchesBegan(touches: Set<UITouch>,
                        withEvent event: UIEvent?)       {
-        
-        // Set the first line to use.
         
         let touch = touches.first!
         
@@ -90,33 +98,39 @@ class DrawView: UIView  {
         
         let location = touch.locationInView(self)
         
-        // Specify the current line for drawing.
+        // Pass the value of location to currentLine.
         
         currentLine = Line(begin: location, end: location)
         
-        // Tell view to display the line.
+        // Update the view.
         
         setNeedsDisplay()
         
     }   // end touchesBegan(_:withEvent)
     
+    
     override func touchesMoved(touches: Set<UITouch>,
                        withEvent event: UIEvent?)       {
         
-        // Update the end of the currentLine.
-        
         let touch = touches.first!
+        
+        // Get location of the touch in the view's
+        // coordinate system.
         
         let location = touch.locationInView(self)
         
+        // Define a new end point for currentLine.
+        
         currentLine?.end = location
+        
+        // Update the view.
         
         setNeedsDisplay()
         
-    }   // end touchesMoved(_:withEvent)
+    }   // end touchesBegan(_:withEvent)
     
     override func touchesEnded(touches: Set<UITouch>,
-                       withEvent event: UIEvent?)       {
+                               withEvent event: UIEvent?)  {
         
         if var line = currentLine   {
             
@@ -126,14 +140,16 @@ class DrawView: UIView  {
             
             line.end = location
             
+            // Append currentLine to finishedLines.
+            
             finishedLines.append(line)
             
-        }   // end if
+        }   // end if var line = currentLine
         
         currentLine = nil
         
         setNeedsDisplay()
         
-    }   // end touchesEnded(_:withEvent)
+    }   // end touchesBegan(_:withEvent)
     
-}   // end class DrawView: UIView
+}   // end DrawView: UIView
