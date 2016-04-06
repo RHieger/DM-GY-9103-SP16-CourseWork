@@ -17,9 +17,11 @@ class DrawView: UIView  {
     
     // MARK: - Properties
     
-    var currentLine: Line?          // Optional to hold current line
+    // Dictionary of Line instances:
     
-    var finishedLines = [Line]()    // Array of Line objects
+    var currentLines = [NSValue: Line]()
+    
+    var finishedLines = [Line]()            // Array of Line objects
     
     
     // MARK: - Methods
@@ -68,18 +70,17 @@ class DrawView: UIView  {
         
         // Now handle lines currently being drawn.
         
-        if let line = currentLine   {
+        
+        // If there is a line currently being drawn,
+        // draw it in red.
             
-            // If there is a line currently being drawn,
-            // draw it in red.
-            
-            UIColor.redColor().setStroke()
-            
-            // Call strokeLine(line: Line).
+        UIColor.redColor().setStroke()
+        
+        for (_, line) in currentLines   {
             
             strokeLine(line)
             
-        }   // end if let line = currentLine
+        }   // end for (_, line) in currentLines
         
     }   // end override func drawRect(rect: CGRect)
     
@@ -91,18 +92,23 @@ class DrawView: UIView  {
     override func touchesBegan(touches: Set<UITouch>,
                        withEvent event: UIEvent?)       {
         
-        let touch = touches.first!
+        // Log statement to see the order of events:
         
-        // Get location of the touch in the view's
-        // coordinate system.
+        print(#function)
         
-        let location = touch.locationInView(self)
+        for touch in touches    {
+            
+            let location = touch.locationInView(self)
+            
+            let newLine = Line(begin: location, end: location)
+            
+            let key = NSValue(nonretainedObject: touch)
+            
+            currentLines[key] = newLine
+            
+        }   // end for touch in touches
         
-        // Pass the value of location to currentLine.
-        
-        currentLine = Line(begin: location, end: location)
-        
-        // Update the view.
+        // Redraw objects defined by CGRect:
         
         setNeedsDisplay()
         
@@ -112,18 +118,17 @@ class DrawView: UIView  {
     override func touchesMoved(touches: Set<UITouch>,
                        withEvent event: UIEvent?)       {
         
-        let touch = touches.first!
+        // Log statement to see the order of events:
         
-        // Get location of the touch in the view's
-        // coordinate system.
+        print(#function)
         
-        let location = touch.locationInView(self)
-        
-        // Define a new end point for currentLine.
-        
-        currentLine?.end = location
-        
-        // Update the view.
+        for touch in touches    {
+            
+            let key = NSValue(nonretainedObject: touch)
+            
+            currentLines[key]?.end = touch.locationInView(self)
+            
+        }   // end for touch in touches
         
         setNeedsDisplay()
         
@@ -132,21 +137,25 @@ class DrawView: UIView  {
     override func touchesEnded(touches: Set<UITouch>,
                                withEvent event: UIEvent?)  {
         
-        if var line = currentLine   {
-            
-            let touch = touches.first!
-            
-            let location = touch.locationInView(self)
-            
-            line.end = location
-            
-            // Append currentLine to finishedLines.
-            
-            finishedLines.append(line)
-            
-        }   // end if var line = currentLine
+        // Log statement to see the order of events:
         
-        currentLine = nil
+        print(#function)
+        
+        for touch in touches    {
+            
+            let key = NSValue(nonretainedObject: touch)
+            
+            if var line = currentLines[key] {
+                
+                line.end = touch.locationInView(self)
+                
+                finishedLines.append(line)
+                
+                currentLines.removeValueForKey(key)
+                
+            }   // end if var line = currentLines[key]
+            
+        }   // end for touch in touches
         
         setNeedsDisplay()
         
