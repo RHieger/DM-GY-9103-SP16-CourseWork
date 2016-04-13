@@ -81,6 +81,26 @@ class DrawView: UIView  {
         
     }   // end strokeLine(line: Line)
     
+    // Handler for doubleTap
+    
+    func doubleTap(gestureRecognizer: UITapGestureRecognizer)    {
+        
+        // Debugging output to console.
+        
+        print("Recognized a double tap.")
+        
+        // Remove all current and finished lines from view.
+        
+        currentLines.removeAll(keepCapacity: false)
+        
+        finishedLines.removeAll(keepCapacity: false)
+        
+        // Update view.
+        
+        setNeedsDisplay()
+        
+    }   // end doubleTap()
+    
     
     // MARK: - Built-In Function Overrides
     
@@ -115,6 +135,9 @@ class DrawView: UIView  {
         }   // end for (_, line) in currentLines
         
     }   // end override func drawRect(rect: CGRect)
+    
+    
+    
     
     // Now we have to transform touches into lines rendered
     // on the screen. To do this, we override three methods:
@@ -195,5 +218,31 @@ class DrawView: UIView  {
         setNeedsDisplay()
         
     }   // end touchesBegan(_:withEvent)
+    
+    
+    // MARK: - Required init()
+    
+    required init?(coder aDecoder: NSCoder)   {
+        
+        // Call super implementation.
+        
+        super.init(coder: aDecoder)
+        
+        // Define a UITapGestureRecognizer for Double Tap.
+        
+        let doubleTapGestureRecognizer =
+            UITapGestureRecognizer( target: self,
+            action: #selector( DrawView.doubleTap(_:) ) )
+        
+        // NOTE: The syntax for "action:" above replaces the
+        //       now deprecated syntax, action: "doubleTap".
+        
+        doubleTapGestureRecognizer.numberOfTapsRequired = 2
+        
+        // Add doubleTapGestureRecognizer to Draw View.
+        
+        addGestureRecognizer(doubleTapGestureRecognizer)
+        
+    }   // end init?(codeer: aCoder)
     
 }   // end DrawView: UIView
