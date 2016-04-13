@@ -239,6 +239,12 @@ class DrawView: UIView  {
         
         doubleTapGestureRecognizer.numberOfTapsRequired = 2
         
+        // Prevent touchesBegan from being called immediately
+        // so that if the gesture is a tap gesture, a point
+        // will not be drawn.
+        
+        doubleTapGestureRecognizer.delaysTouchesBegan = true
+        
         // Add doubleTapGestureRecognizer to Draw View.
         
         addGestureRecognizer(doubleTapGestureRecognizer)
