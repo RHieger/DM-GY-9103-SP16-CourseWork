@@ -101,6 +101,14 @@ class DrawView: UIView  {
         
     }   // end doubleTap()
     
+    func tap(gestureRecognizer: UITapGestureRecognizer) {
+        
+        // Debugging output to console.
+        
+        print("Recognized a tap.")
+        
+    }   // end tap(gestureRecognizer: UITapGestureRecognizer)       d
+    
     
     // MARK: - Built-In Function Overrides
     
@@ -230,24 +238,40 @@ class DrawView: UIView  {
         
         // Define a UITapGestureRecognizer for Double Tap.
         
-        let doubleTapGestureRecognizer =
+        let doubleTapRecognizer =
             UITapGestureRecognizer( target: self,
             action: #selector( DrawView.doubleTap(_:) ) )
         
         // NOTE: The syntax for "action:" above replaces the
         //       now deprecated syntax, action: "doubleTap".
         
-        doubleTapGestureRecognizer.numberOfTapsRequired = 2
+        doubleTapRecognizer.numberOfTapsRequired = 2
         
         // Prevent touchesBegan from being called immediately
         // so that if the gesture is a tap gesture, a point
         // will not be drawn.
         
-        doubleTapGestureRecognizer.delaysTouchesBegan = true
+        doubleTapRecognizer.delaysTouchesBegan = true
         
-        // Add doubleTapGestureRecognizer to Draw View.
+        // Add doubleTapGestureRecognizer to DrawView.
         
-        addGestureRecognizer(doubleTapGestureRecognizer)
+        addGestureRecognizer(doubleTapRecognizer)
+        
+        // Define a UITapGestureRecognizer for Single Tap.
+        
+        let tapRecognizer =
+        UITapGestureRecognizer( target: self,
+                                action: #selector( DrawView.tap(_:) ) )
+        
+        // Prevent doubleTapRecognizer from being called immediately
+        // so that if the gesture is a single tap, this gesture will
+        // not be intercepted.
+        
+        tapRecognizer.delaysTouchesBegan = true
+        
+        // Add tapRecognizer to DrawView.
+        
+        addGestureRecognizer(tapRecognizer)
         
     }   // end init?(codeer: aCoder)
     
