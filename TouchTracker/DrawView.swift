@@ -24,6 +24,39 @@ class DrawView: UIView  {
     var finishedLines = [Line]()            // Array of Line objects
     
     
+    // MARK: @IBInspectables
+    
+    @IBInspectable var finishedLineColor: UIColor = UIColor.blackColor() {
+    
+        didSet {
+    
+            setNeedsDisplay()
+    
+        }   // end didSet
+    
+    }   // end @IBInspectable var finishedLineColor
+    
+    @IBInspectable var currentLineColor: UIColor = UIColor.redColor() {
+        
+        didSet {
+            
+            setNeedsDisplay()
+            
+        }   // end didSet
+        
+    }   // end @IBInspectable var currentLineColor
+    
+    @IBInspectable var lineThickness: CGFloat = 10 {
+        
+        didSet  {
+            
+            setNeedsDisplay()
+            
+        }   // end didSet
+        
+    }   // end @IBInspectable var lineThickness
+
+    
     // MARK: - Methods
     
     func strokeLine(line: Line) {
@@ -34,7 +67,7 @@ class DrawView: UIView  {
         
         // Set line styling.
         
-        path.lineWidth = 10
+        path.lineWidth = lineThickness
         path.lineCapStyle = CGLineCap.Round
         
         // Set path (beginning and ending points for line).
@@ -56,9 +89,9 @@ class DrawView: UIView  {
         // This method sets the color for the line stroke
         // and draws the line by calling strokeLine(line: Line).
         
-        // Draw finished lines in black.
+        // Set line stroke color to finishedLineColor
         
-        UIColor.blackColor().setStroke()
+        finishedLineColor.setStroke()
         
         for line in finishedLines {
             
@@ -70,11 +103,10 @@ class DrawView: UIView  {
         
         // Now handle lines currently being drawn.
         
-        
         // If there is a line currently being drawn,
-        // draw it in red.
+        // set its stroke to currentLineColor.
             
-        UIColor.redColor().setStroke()
+        currentLineColor.setStroke()
         
         for (_, line) in currentLines   {
             
@@ -140,6 +172,9 @@ class DrawView: UIView  {
         // Log statement to see the order of events:
         
         print(#function)
+        
+        // NOTE: print(__FUNCTION__), as specified in book is
+        //       now deprecated in favor of the above syntax.
         
         for touch in touches    {
             
