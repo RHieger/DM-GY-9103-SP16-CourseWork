@@ -263,15 +263,21 @@ class DrawView: UIView  {
         UITapGestureRecognizer( target: self,
                                 action: #selector( DrawView.tap(_:) ) )
         
-        // Prevent doubleTapRecognizer from being called immediately
-        // so that if the gesture is a single tap, this gesture will
+        // Prevent tapRecognizer from being called immediately
+        // so that if the gesture is a double tap, this gesture will
         // not be intercepted.
         
         tapRecognizer.delaysTouchesBegan = true
         
+        // Prevent doubleTapRecognizer from intercepting what might
+        // have been a single tap.
+        
+        tapRecognizer.requireGestureRecognizerToFail(doubleTapRecognizer)
+        
         // Add tapRecognizer to DrawView.
         
         addGestureRecognizer(tapRecognizer)
+        
         
     }   // end init?(codeer: aCoder)
     
