@@ -23,7 +23,24 @@ class DrawView: UIView  {
     
     var finishedLines = [Line]()            // Array of Line objects
     
-    var selectedLineIndex: Int?             // User State: Selected Line
+    var selectedLineIndex: Int?     {
+        
+        // Add property observer so that "Delete" menu item
+        // does not remain on the view after a doubleTap event.
+        
+        didSet {
+        
+            if selectedLineIndex == nil {
+            
+                let menu = UIMenuController.sharedMenuController()
+            
+                menu.setMenuVisible(false, animated: true)
+            
+            }   // end if
+            
+        }
+        
+    }   // end selectLineIndex: Int?
     
     
     // MARK: @IBInspectables
