@@ -119,6 +119,45 @@ class DrawView: UIView  {
         
         selectedLineIndex = indexOfLineAtPoint(point)
         
+        // Instantiate a menu controller to allow user to delete
+        // the selected line.
+        
+        let menu = UIMenuController.sharedMenuController()
+        
+        // Now, if there is a selected line, present the menu.
+        
+        if selectedLineIndex != nil {
+            
+            // Make DrawView the target of menu item action messages.
+            
+            becomeFirstResponder()
+            
+            // Create new "Delete" menu item.
+            
+            let deleteItem =
+                UIMenuItem( title: "Delete",
+                           action: #selector(DrawView.deleteLine) )
+            
+            // Add "Delete" to menuItems.
+            
+            menu.menuItems = [deleteItem]
+            
+            // Tell the menu from where it should emanate, and show it.
+            
+            menu.setTargetRect( CGRect(x: point.x, y: point.y,
+                                   width: 2, height: 2),
+                                  inView: self )
+            
+            menu.setMenuVisible(true, animated: true)
+            
+        }   else    {
+            
+            // Hide the menu if no line is selected.
+            
+            menu.setMenuVisible(false, animated: true)
+            
+        }   // end if-else
+        
         // Update view.
         
         setNeedsDisplay()
@@ -163,6 +202,30 @@ class DrawView: UIView  {
         return nil
         
     }   // end indexOfLineAtPoint(point: CGPoint) -> Int?
+    
+    // deleteLine method deletes a line when user taps
+    // "Delete" menu item appearing over selected line.
+    
+    func deleteLine(sender: AnyObject)   {
+        
+        // Remove selectedLine from list of finishedLines.
+        
+        if let index = selectedLineIndex    {
+            
+            finishedLines.removeAtIndex(index)
+            
+            // Set the selectedLineIndex to nil so location
+            // of deleted line is destroyed.
+            
+            selectedLineIndex = nil
+            
+            // Update view.
+            
+            setNeedsDisplay()
+            
+        }   // end if
+        
+    }   // end deleteLine(sender: AnyObject)
     
     
     // MARK: - Built-In Function Overrides
@@ -297,6 +360,15 @@ class DrawView: UIView  {
         setNeedsDisplay()
         
     }   // end touchesBegan(_:withEvent)
+    
+    // Override canBecomeFirstResponder to allow appearance of
+    // "Delete" menu.
+    
+    override func canBecomeFirstResponder() -> Bool {
+        
+        return true
+        
+    }   // end canBecomeFirstResponder() -> Bool
     
     
     // MARK: - Required init()
