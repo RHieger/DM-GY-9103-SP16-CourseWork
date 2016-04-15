@@ -23,6 +23,8 @@ class DrawView: UIView  {
     
     var finishedLines = [Line]()            // Array of Line objects
     
+    var selectedLineIndex: Int?             // User State: Selected Line
+    
     
     // MARK: @IBInspectables
     
@@ -89,6 +91,10 @@ class DrawView: UIView  {
         
         print("Recognized a double tap.")
         
+        // Set selectedLineIndex to nil to avoid application trapping.
+        
+        selectedLineIndex = nil
+        
         // Remove all current and finished lines from view.
         
         currentLines.removeAll(keepCapacity: false)
@@ -107,7 +113,56 @@ class DrawView: UIView  {
         
         print("Recognized a tap.")
         
-    }   // end tap(gestureRecognizer: UITapGestureRecognizer)       d
+        // Return the point tapped.
+        
+        let point = gestureRecognizer.locationInView(self)
+        
+        selectedLineIndex = indexOfLineAtPoint(point)
+        
+        // Update view.
+        
+        setNeedsDisplay()
+        
+    }   // end tap(gestureRecognizer: UITapGestureRecognizer)
+    
+    // Find the line that has been selected by user.
+    
+    func indexOfLineAtPoint(point: CGPoint) -> Int? {
+        
+        // Find a line close to the point.
+        
+        for (index, line) in finishedLines.enumerate()  {
+            
+            let begin = line.begin  // Beginning point of line
+            let end = line.end      // Ending point of line
+            
+            // Check a few points on the line.
+            
+            for t in CGFloat(0).stride(to: 1.0, by: 0.05)   {
+                
+                let x = begin.x + ( (end.x - begin.x) * t )     // x-coordinate
+                let y = begin.y + ( (end.y - begin.y) * t )     // y-coordinate
+                
+                // If the tapped point is within 20 points, let's
+                // return this line.
+                
+                
+                if hypot(x - point.x, y - point.y) < 20.0 {
+                    
+                    return index
+                    
+                }   // end if
+                
+            }   // end for
+            
+        }   // end for
+        
+        // If nothing is close enough to the selected point, then
+        // we did not select a line.
+        
+        return nil
+        
+    }   // end indexOfLineAtPoint(point: CGPoint) -> Int?
     
     
     // MARK: - Built-In Function Overrides
@@ -142,9 +197,25 @@ class DrawView: UIView  {
             
         }   // end for (_, line) in currentLines
         
+        // If line is selected set its color to green.
+        
+        if let index = selectedLineIndex    {
+            
+            // Set the color to be rendered.
+            
+            UIColor.greenColor().setStroke()
+            
+            // Add selectedline to index of finishedLines.
+            
+            let selectedLine = finishedLines[index]
+            
+            // Render selectedLine as green.
+            
+            strokeLine(selectedLine)
+            
+        }   // end if
+        
     }   // end override func drawRect(rect: CGRect)
-    
-    
     
     
     // Now we have to transform touches into lines rendered
