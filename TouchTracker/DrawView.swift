@@ -295,6 +295,48 @@ class DrawView: UIView, UIGestureRecognizerDelegate  {
         
         print("Recognized a pan.")
         
+        // If a line is selected...
+        
+        if let index = selectedLineIndex    {
+            
+            // When the pan recognizer changes its position...
+            
+            if gestureRecognizer.state == .Changed {
+                
+                // How far has the pan moved?
+                
+                let translation =
+                gestureRecognizer.translationInView(self)
+                
+                // Add the translation to the current beginning
+                // and ending points of the line; make sure there
+                // are no copy and paste typos!
+                
+                finishedLines[index].begin.x += translation.x
+                finishedLines[index].begin.y += translation.y
+                finishedLines[index].end.x += translation.x
+                finishedLines[index].end.y += translation.y
+                
+                // Set translation point to 0 after each event so
+                // that new value will be registered on each event.
+                
+                gestureRecognizer.setTranslation(CGPoint.zero,
+                                                 inView: self)
+                
+                // Update DrawView.
+                
+                setNeedsDisplay()
+                
+            }   // end if
+            
+        }   else    {
+            
+            // If no line is selected, do not do anything.
+            
+            return
+            
+        }   // end if-if-else
+        
     }   // end moveLine(gestureRecognizer: UIPanGestureRecognizer)
     
     

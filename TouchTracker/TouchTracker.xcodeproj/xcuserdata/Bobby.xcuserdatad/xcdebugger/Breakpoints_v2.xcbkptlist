@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DrawView.swift"
-            timestampString = "482524451.606365"
+            timestampString = "482525730.551872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "487"
-            endingLineNumber = "487"
+            startingLineNumber = "529"
+            endingLineNumber = "529"
             landmarkName = "init(coder:)"
             landmarkType = "5">
          </BreakpointContent>
