@@ -244,6 +244,46 @@ class DrawView: UIView  {
         
     }   // end deleteLine(sender: AnyObject)
     
+    // longPress detects a long press of 0.5 seconds or longer
+    // and allows the user to move the selected line from its
+    // original location to a new one.
+    
+    func longPress(gestureRecognizer: UIGestureRecognizer)    {
+        
+        // Log debug data to console.
+        
+        print("Recognized a long press.")
+        
+        // Did the gesture begin?
+        
+        if gestureRecognizer.state == .Began    {
+            
+            // Set the beginning point of selected line.
+            
+            let point = gestureRecognizer.locationInView(self)
+            
+            // Get selectedLine.
+            
+            selectedLineIndex = indexOfLineAtPoint(point)
+            
+            if selectedLineIndex != nil     {
+                
+                currentLines.removeAll(keepCapacity: false)
+                
+            }   // end if
+            
+        }   else if gestureRecognizer.state == .Ended    {
+            
+            selectedLineIndex = nil
+            
+        }   // end if-if-else-if
+        
+        // Update DrawView
+        
+        setNeedsDisplay()
+        
+    }   // end longPress(gestureRecognizer: UIGesture Recognizer)
+    
     
     // MARK: - Built-In Function Overrides
     
@@ -423,6 +463,10 @@ class DrawView: UIView  {
         UITapGestureRecognizer( target: self,
                                 action: #selector( DrawView.tap(_:) ) )
         
+        // NOTE: The syntax for "action:" above replaces the
+        //       now deprecated syntax, action: "tap".
+
+        
         // Prevent tapRecognizer from being called immediately
         // so that if the gesture is a double tap, this gesture will
         // not be intercepted.
@@ -437,6 +481,19 @@ class DrawView: UIView  {
         // Add tapRecognizer to DrawView.
         
         addGestureRecognizer(tapRecognizer)
+        
+        // Instantiate a UILongPressGestureRecognizer object.
+        
+        let longPressRecognizer =
+            UILongPressGestureRecognizer(target: self,
+            action: #selector( DrawView.longPress(_:) ) )
+        
+        // NOTE: The syntax for "action:" above replaces the
+        //       now deprecated syntax, action: "longPress".
+        
+        // Add longPressRecognizer to DrawView.
+        
+        addGestureRecognizer(longPressRecognizer)
         
         
     }   // end init?(codeer: aCoder)
