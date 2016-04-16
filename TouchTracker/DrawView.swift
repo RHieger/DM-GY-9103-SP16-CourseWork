@@ -42,6 +42,9 @@ class DrawView: UIView  {
         
     }   // end selectLineIndex: Int?
     
+    var moveRecognizer: UIPanGestureRecognizer!     // To recognize moves
+                                                    // of lines.
+    
     
     // MARK: @IBInspectables
     
@@ -284,6 +287,16 @@ class DrawView: UIView  {
         
     }   // end longPress(gestureRecognizer: UIGesture Recognizer)
     
+    // Move selectedLine.
+    
+    func moveLine(gestureRecognizer: UIPanGestureRecognizer)   {
+        
+        // Log debug output to console.
+        
+        print("Recognized a pan.")
+        
+    }   // end moveLine(gestureRecognizer: UIPanGestureRecognizer)
+    
     
     // MARK: - Built-In Function Overrides
     
@@ -495,6 +508,13 @@ class DrawView: UIView  {
         
         addGestureRecognizer(longPressRecognizer)
         
+        moveRecognizer =
+            UIPanGestureRecognizer( target: self,
+            action: #selector( DrawView.moveLine(_:) ) )
+        
+        moveRecognizer.cancelsTouchesInView = false
+        
+        addGestureRecognizer(moveRecognizer)
         
     }   // end init?(codeer: aCoder)
     
