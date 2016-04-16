@@ -13,7 +13,7 @@ import UIKit
 // The DrawView class is a UIView object that the defines
 // the view(s) controlled by ViewController.swift.
 
-class DrawView: UIView  {
+class DrawView: UIView, UIGestureRecognizerDelegate  {
     
     // MARK: - Properties
     
@@ -298,6 +298,15 @@ class DrawView: UIView  {
     }   // end moveLine(gestureRecognizer: UIPanGestureRecognizer)
     
     
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer,
+    shouldRecognizeSimultaneouslyWithGestureRecognizer
+        otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        return true
+    
+    }   // end gestureRecognizer(_:shouldRecognizeSimultaneously...)
+    
+    
     // MARK: - Built-In Function Overrides
     
     override func drawRect(rect: CGRect) {
@@ -511,6 +520,12 @@ class DrawView: UIView  {
         moveRecognizer =
             UIPanGestureRecognizer( target: self,
             action: #selector( DrawView.moveLine(_:) ) )
+        
+        // Set the delegate for moveRecognizer so that more
+        // than one gesture may be recognized at the same
+        // time on the same object.
+        
+        moveRecognizer.delegate = self
         
         moveRecognizer.cancelsTouchesInView = false
         
