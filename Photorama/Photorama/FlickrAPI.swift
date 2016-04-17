@@ -38,4 +38,20 @@ struct FlickerAPI {
     private static let baseURL =
     "https://api.flickr.com/services/rest"
     
+    // MARK: - Methods
+    
+    private static func flickrURL( method method: Method,
+                                  parameters: [String: String]? ) -> NSURL  {
+        
+        return NSURL()
+        
+    }   // end flickrURL(method method: Method...) -> NSURL
+
+    static func recentPhotosURL() -> NSURL  {
+        
+        return flickrURL(method: .RecentPhotos,
+                         parameters: ["extras": "url_h, date_taken"] )
+        
+    }   // end recentPhotosURL() -> NSURL
+    
 }   // end flickerAPI
