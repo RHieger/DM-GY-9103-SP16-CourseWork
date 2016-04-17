@@ -12,6 +12,7 @@
 		C507E62E1CC3145D00E47BA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C507E62D1CC3145D00E47BA2 /* Assets.xcassets */; };
 		C507E6311CC3145D00E47BA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C507E62F1CC3145D00E47BA2 /* LaunchScreen.storyboard */; };
 		C507E6391CC3156500E47BA2 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507E6381CC3156500E47BA2 /* PhotosViewController.swift */; };
+		C507E63B1CC4032E00E47BA2 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507E63A1CC4032E00E47BA2 /* FlickrAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C507E6301CC3145D00E47BA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C507E6321CC3145D00E47BA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C507E6381CC3156500E47BA2 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosViewController.swift; path = ../PhotosViewController.swift; sourceTree = "<group>"; };
+		C507E63A1CC4032E00E47BA2 /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				C507E6261CC3145D00E47BA2 /* AppDelegate.swift */,
+				C507E63A1CC4032E00E47BA2 /* FlickrAPI.swift */,
 				C507E6381CC3156500E47BA2 /* PhotosViewController.swift */,
 				C507E62A1CC3145D00E47BA2 /* Main.storyboard */,
 				C507E62D1CC3145D00E47BA2 /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C507E63B1CC4032E00E47BA2 /* FlickrAPI.swift in Sources */,
 				C507E6391CC3156500E47BA2 /* PhotosViewController.swift in Sources */,
 				C507E6271CC3145D00E47BA2 /* AppDelegate.swift in Sources */,
 			);
