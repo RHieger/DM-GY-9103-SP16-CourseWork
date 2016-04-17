@@ -301,7 +301,21 @@ class DrawView: UIView, UIGestureRecognizerDelegate  {
             
             // When the pan recognizer changes its position...
             
-            if gestureRecognizer.state == .Changed {
+            // FULL DISCLOSURE: I found this solution on the Big Nerd
+            //                  Ranch forums. I had tried something
+            //                  similar, but was only partly successful
+            //                  in that the undeleted selected line
+            //                  moved along with the new line being
+            //                  drawn until it was intercepted by a
+            //                  conditional regarding the selectedLineIndex.
+            //
+            //                  The code appearing below was found at the
+            //                  following URL:
+            //
+            // http://forums.bignerdranch.com/viewtopic.php?f=637&t=11379
+            
+            if gestureRecognizer.state == .Changed
+                && !UIMenuController.sharedMenuController().menuVisible {
                 
                 // How far has the pan moved?
                 
