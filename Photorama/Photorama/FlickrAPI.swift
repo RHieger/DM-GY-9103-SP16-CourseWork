@@ -20,8 +20,22 @@
 
 import Foundation
 
+enum Method: String {
+    
+    // This enumeration contains raw strings that
+    // correspond to methods in the Flicker API.
+    
+    case RecentPhotos = "flickr.photos.getRecent"
+    
+}   // end Method
+
 struct FlickerAPI {
     
-    // Insert fields here.
+    // MARK: - Fields
+    
+    // Reference the base URL for web service requests.
+    
+    private static let baseURL =
+    "https://api.flickr.com/services/rest"
     
 }   // end flickerAPI
