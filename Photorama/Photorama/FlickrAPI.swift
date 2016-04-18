@@ -153,4 +153,28 @@ struct FlickerAPI {
         
     }   // end photosFromJSONData(data: NSData) -> PhotoResult
     
+    private static func
+        photoFromJSONObject( json: [String: AnyObject] ) -> Photo?  {
+        
+        guard let
+            photoID = json["id"] as? String,
+            title = json["title"] as? String,
+            dateString = json["dateTaken"] as? String,
+            photoURLString = json["url_h"] as? String,
+            url = NSURL(string: photoURLString),
+            dateTaken = dateFormatter.dateFromString(dateString)
+        
+        else    {
+         
+            // Don't have enough information to construct a Photo.
+            
+            return nil
+            
+        }   // end guard let-else
+        
+        return Photo(title: title, remoteURL: url,
+                     photoID: photoID, dateTaken: dateTaken)
+
+    }   // end photoFromJSONOBject( json: [String: AnyObject] ) -> Photo?
+    
 }   // end flickerAPI
