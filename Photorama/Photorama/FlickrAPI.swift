@@ -39,6 +39,12 @@ enum PhotoResult {
     
 }   // end PhotoResult
 
+enum FlickrError: ErrorType {
+    
+    case InvalidJSONData
+    
+}   // end FlickrError
+
 struct FlickerAPI {
     
     // MARK: - Fields
@@ -111,6 +117,19 @@ struct FlickerAPI {
             let jsonObject: AnyObject = try
             NSJSONSerialization.JSONObjectWithData( data,
                             options: [] )
+            
+            guard let
+                jsonDictionary = jsonObject as? [NSObject: AnyObject],
+            photos = jsonDictionary["photos"] as? [String: AnyObject],
+            photosArray = photos["photo"] as? [ [String: AnyObject] ]
+            
+            else {
+                    
+                // The jsonObject does not meet our expectations.
+                
+                return .Failure(FlickrError.InvalidJSONData)
+                    
+            }   // end guard let-else
             
             var finalPhotos = [Photo]()
             
