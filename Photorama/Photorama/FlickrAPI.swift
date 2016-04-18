@@ -29,6 +29,16 @@ enum Method: String {
     
 }   // end Method
 
+enum PhotoResult {
+    
+    // This enumeration encapsulates the result status
+    // of the NSURLRequest.
+    
+    case Success( [Photo] )
+    case Failure(ErrorType)
+    
+}   // end PhotoResult
+
 struct FlickerAPI {
     
     // MARK: - Fields
@@ -93,5 +103,25 @@ struct FlickerAPI {
                          parameters: ["extras": "url_h, date_taken"] )
         
     }   // end recentPhotosURL() -> NSURL
+    
+    static func photosFromJSONData(data: NSData) -> PhotoResult {
+        
+        do  {
+            
+            let jsonObject: AnyObject = try
+            NSJSONSerialization.JSONObjectWithData( data,
+                            options: [] )
+            
+            var finalPhotos = [Photo]()
+            
+            return .Success(finalPhotos)
+            
+        }   catch let error {
+            
+            return .Failure(error)
+            
+        }
+        
+    }   // end photosFromJSONData(data: NSData) -> PhotoResult
     
 }   // end flickerAPI
