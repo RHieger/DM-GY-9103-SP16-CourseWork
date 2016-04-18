@@ -35,15 +35,55 @@ struct FlickerAPI {
     
     // Reference the base URL for web service requests.
     
-    private static let baseURL =
+    private static let baseURLString =
     "https://api.flickr.com/services/rest"
+    
+    private static let APIKey = "2ad71fb2b8b7e5543cb2db8e5821570b"
+    
     
     // MARK: - Methods
     
     private static func flickrURL( method method: Method,
                                   parameters: [String: String]? ) -> NSURL  {
         
-        return NSURL()
+        // Build components for NSURL object.
+        
+        let components = NSURLComponents(string: baseURLString)
+        
+        var queryItems = [NSURLQueryItem]()
+        
+        let baseParams = [
+                    "method": method.rawValue,
+                    "format": "json",
+            "nojsoncallback": "1",
+            "api_key": APIKey
+        ]
+        
+        for (key, value) in baseParams {
+            
+            let item = NSURLQueryItem(name: key, value: value)
+            
+            queryItems.append(item)
+            
+        }
+        
+        if let additionalParameters = parameters {
+            
+            for (key, value) in additionalParameters    {
+                
+                let item = NSURLQueryItem(name: key, value: value)
+                
+                queryItems.append(item)
+                
+            }   // end for
+            
+        }   // end additionalParameters
+        
+        // Return completed NSURL object.
+        
+        components?.queryItems = queryItems
+        
+        return components!.URL!
         
     }   // end flickrURL(method method: Method...) -> NSURL
 
