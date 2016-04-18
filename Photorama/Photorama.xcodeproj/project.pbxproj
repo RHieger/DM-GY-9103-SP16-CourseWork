@@ -14,6 +14,7 @@
 		C507E6391CC3156500E47BA2 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507E6381CC3156500E47BA2 /* PhotosViewController.swift */; };
 		C507E63B1CC4032E00E47BA2 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507E63A1CC4032E00E47BA2 /* FlickrAPI.swift */; };
 		C507E63D1CC49F0C00E47BA2 /* PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507E63C1CC49F0C00E47BA2 /* PhotoStore.swift */; };
+		C507E63F1CC4B13000E47BA2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507E63E1CC4B13000E47BA2 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C507E6381CC3156500E47BA2 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosViewController.swift; path = ../PhotosViewController.swift; sourceTree = "<group>"; };
 		C507E63A1CC4032E00E47BA2 /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 		C507E63C1CC49F0C00E47BA2 /* PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
+		C507E63E1CC4B13000E47BA2 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				C507E6261CC3145D00E47BA2 /* AppDelegate.swift */,
+				C507E63E1CC4B13000E47BA2 /* Photo.swift */,
 				C507E63A1CC4032E00E47BA2 /* FlickrAPI.swift */,
 				C507E63C1CC49F0C00E47BA2 /* PhotoStore.swift */,
 				C507E6381CC3156500E47BA2 /* PhotosViewController.swift */,
@@ -146,6 +149,7 @@
 				C507E6391CC3156500E47BA2 /* PhotosViewController.swift in Sources */,
 				C507E63D1CC49F0C00E47BA2 /* PhotoStore.swift in Sources */,
 				C507E6271CC3145D00E47BA2 /* AppDelegate.swift in Sources */,
+				C507E63F1CC4B13000E47BA2 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
