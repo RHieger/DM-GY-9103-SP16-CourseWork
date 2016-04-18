@@ -70,6 +70,6 @@ class PhotoStore    {
         return FlickrAPI.photosFromJSONData(jsonData)
         
     }   // end func processRecentPhotosRequest(data data: NSData?,
-        //                       error: NSErrror?) -> PhotoResults
+        //                       error: NSErrror?) -> PhotosResult
     
 }   // end PhotoStore

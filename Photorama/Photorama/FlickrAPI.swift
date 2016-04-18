@@ -204,4 +204,18 @@ struct FlickrAPI {
 
     }   // end photoFromJSONOBject( json: [String: AnyObject] ) -> Photo?
     
+    func processRecentPhotosRequest(data data: NSData?,
+                                        error: NSError?) -> PhotosResult {
+        
+        guard let jsonData = data else  {
+            
+            return .Failure(error!)
+            
+        }   // end guard let-else
+        
+        return FlickrAPI.photosFromJSONData(jsonData)
+        
+    }   // end processRecentPhotosRequest(data data: NSData?,
+        //                                error: NSError?) -> PhotoResult
+    
 }   // end flickerAPI
