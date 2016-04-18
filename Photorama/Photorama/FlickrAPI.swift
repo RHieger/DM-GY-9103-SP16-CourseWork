@@ -143,6 +143,33 @@ struct FlickerAPI {
             
             var finalPhotos = [Photo]()
             
+            // Loop through photos returned in the json dictionary
+            // from Flickr and add them to the array of final photo
+            // objects.
+            
+            for photoJSON in photosArray    {
+                
+                if let photo = photoFromJSONObject(photoJSON)   {
+                    
+                    // Append photo to finalPhotos array.
+                    
+                    finalPhotos.append(photo)
+                    
+                }   // end if
+                
+            }   // end for
+            
+            // Make sure that JSON data is not malformed.
+            
+            if finalPhotos.count == 0 && photosArray.count > 0  {
+                
+                // We weren't able to parse any of the photos.
+                // Maybe the JSON format for photos has changed.
+                
+                return .Failure(FlickrError.InvalidJSONData)
+                
+            }
+            
             return .Success(finalPhotos)
             
         }   catch let error {
