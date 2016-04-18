@@ -21,6 +21,24 @@ import Foundation
 
 class Photo {
     
+    // MARK: - Properties
     
+    let title: String           // Title of Photo
+    let remoteURL: NSURL        // Flickr URL for Photo
+    let photoID: String         // Photo ID
+    let dateTaken: NSDate       // Date Photo Taken
+    
+    
+    // MARK: - Designated Initializer
+    
+    init(title: String, remoteURL: NSURL,
+         photoID: String, dateTaken: NSDate)    {
+        
+        self.title = title
+        self.remoteURL = remoteURL
+        self.photoID = photoID
+        self.dateTaken = dateTaken
+        
+    }   // end init(...)
     
 }   // end Photo
