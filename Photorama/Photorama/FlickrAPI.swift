@@ -56,6 +56,16 @@ struct FlickerAPI {
     
     private static let APIKey = "2ad71fb2b8b7e5543cb2db8e5821570b"
     
+    private static let dateFormatter: NSDateFormatter = {
+        
+        let formatter = NSDateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return formatter
+        
+    }()   // end dateFormatter
+    
     
     // MARK: - Methods
     
