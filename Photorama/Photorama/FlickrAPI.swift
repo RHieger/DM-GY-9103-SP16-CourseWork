@@ -29,7 +29,7 @@ enum Method: String {
     
 }   // end Method
 
-enum PhotoResult {
+enum PhotosResult {
     
     // This enumeration encapsulates the result status
     // of the NSURLRequest.
@@ -37,7 +37,7 @@ enum PhotoResult {
     case Success( [Photo] )
     case Failure(ErrorType)
     
-}   // end PhotoResult
+}   // end PhotosResult
 
 enum FlickrError: ErrorType {
     
@@ -120,7 +120,7 @@ struct FlickrAPI {
         
     }   // end recentPhotosURL() -> NSURL
     
-    static func photosFromJSONData(data: NSData) -> PhotoResult {
+    static func photosFromJSONData(data: NSData) -> PhotosResult {
         
         do  {
             
