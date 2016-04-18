@@ -47,12 +47,19 @@ class PhotoStore    {
             
             if let jsonData = data {
                 
-                if let jsonString = NSString(data: jsonData,
-                            encoding: NSUTF8StringEncoding)    {
-                 
-                    print(jsonString)
+                do  {
                     
-                }   // end if
+                    let jsonObject: AnyObject =
+                    try NSJSONSerialization.JSONObjectWithData(jsonData,
+                                        options: [] )
+                    
+                    print(jsonObject)
+                    
+                }   catch let error {
+                    
+                    print("Error creating JSON object: \(error)")
+                    
+                }   // end do-try-catch
                 
             }   else if let requestError = error {
                 
