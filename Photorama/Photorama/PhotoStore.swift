@@ -37,7 +37,7 @@ class PhotoStore    {
     
     func fetchRecentPhotos()    {
         
-        let url = FlickerAPI.recentPhotosURL()
+        let url = FlickrAPI.recentPhotosURL()
         
         let request = NSURLRequest(URL: url)
         
@@ -76,5 +76,19 @@ class PhotoStore    {
         task.resume()
         
     }   // end fetchRecentPhotos()
+    
+    func processRecentPhotosRequest(data data: NSData?,
+                                        error: NSError?) -> PhotoResult   {
+        
+        guard let jsonData = data else {
+            
+            return .Failure(error!)
+            
+        }   // end guard let-else
+        
+        return FlickrAPI.photosFromJSONData(jsonData)
+        
+    }   // end func processRecentPhotosRequest(data data: NSData?,
+        //                       error: NSErrror?) -> PhotoResults
     
 }   // end PhotoStore

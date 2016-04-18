@@ -45,7 +45,7 @@ enum FlickrError: ErrorType {
     
 }   // end FlickrError
 
-struct FlickerAPI {
+struct FlickrAPI {
     
     // MARK: - Fields
     
