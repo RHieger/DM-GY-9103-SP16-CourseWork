@@ -25,4 +25,22 @@ class PhotosViewController: UIViewController    {
     
     @IBOutlet var imageView: UIImageView!
     
+    
+    // MARK: - Properties
+    
+    var store: PhotoStore!
+    
+    
+    // MARK: - Built-In Method Overrides
+    
+    override func viewDidLoad() {
+        
+        // Call super implementation.
+        
+        super.viewDidLoad()
+        
+        store.fetchRecentPhotos()
+        
+    }   // end override func viewDidLoad()
+    
 }   // end class PhotosViewController: UIViewController
