@@ -21,7 +21,53 @@ import Foundation
 
 class PhotoStore    {
     
+    // MARK: - Properties
+    
+    let session: NSURLSession = {
+        
+       let config =
+        NSURLSessionConfiguration.defaultSessionConfiguration()
+        
+        return NSURLSession(configuration: config)
+        
+    }() // end session
     
     
+    // MARK: - Methods
+    
+    func fetchRecentPhotos()    {
+        
+        let url = FlickerAPI.recentPhotosURL()
+        
+        let request = NSURLRequest(URL: url)
+        
+        let task = session.dataTaskWithRequest(request) {
+            
+            (data, response, error) -> Void in
+            
+            if let jsonData = data {
+                
+                if let jsonString = NSString(data: jsonData,
+                            encoding: NSUTF8StringEncoding)    {
+                 
+                    print(jsonString)
+                    
+                }   // end if
+                
+            }   else if let requestError = error {
+                
+                print( "Error fetching recent photos: \(requestError)" )
+                
+            }   else    {
+                
+                print("Unexpected error with the request.")
+                
+            }   // end else if-else
+            
+        }   // end task
+        
+        task.resume()
+        
+    }   // end fetchRecentPhotos()
     
 }   // end PhotoStore
