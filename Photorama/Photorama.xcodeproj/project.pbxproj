@@ -305,6 +305,7 @@
 				C507E6371CC3145D00E47BA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

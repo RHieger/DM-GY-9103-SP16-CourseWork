@@ -39,7 +39,21 @@ class PhotosViewController: UIViewController    {
         
         super.viewDidLoad()
         
-        store.fetchRecentPhotos()
+        store.fetchRecentPhotos()   {
+            
+            (photosResult) -> Void in
+            
+            switch photosResult {
+                
+            case let .Success(photos):
+                print("Successfully found \(photos.count) recent photos.")
+                
+            case let .Failure(error):
+                print("Error fetching recent photos: \(error)")
+                
+            }
+            
+        }
         
     }   // end override func viewDidLoad()
     
